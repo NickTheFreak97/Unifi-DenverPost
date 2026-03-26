@@ -1,14 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { Breakpoint } from "./Breakpoint";
+import type { AnyChildren } from "../../types/AnyChildren";
 
-
-interface ScreenWidthProviderProps {
-    children: React.ReactElement | React.ReactElement[]
-}
 
 const ScreenWidthContext = createContext<Breakpoint | null>(null);
 
-export const ScreenWidthProvider: React.FC<ScreenWidthProviderProps> = (props) => {
+export const ScreenWidthProvider: React.FC<AnyChildren> = (props) => {
     const makeBreakpointFromWidth: (arg0: number) => Breakpoint = (width: number) => {
         if (width < 640) {
             return Breakpoint.mobile
