@@ -1,23 +1,14 @@
-import React, { useEffect } from "react"
-import { useScreenWidth } from "./Context/Screen Size/UseScreenWidth";
+import React from "react"
 import { useTheme } from "./components/theme/theme";
 
+import Header from './components/Header/Header';
 
 const App: React.FC = () => {
-  const screenWidth = useScreenWidth();
   const theme = useTheme();
-
-  useEffect(
-    () => {
-      console.log(theme)
-    }, [theme]
-  )
 
   return (
   <React.Fragment>
-    <h1>
-      {screenWidth}
-    </h1>
+    <Header />
   </React.Fragment>
   )
 }

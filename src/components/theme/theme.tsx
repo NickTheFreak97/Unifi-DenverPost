@@ -6,6 +6,7 @@ export type HexPixelValue = `#${string}`
 
 export interface ThemeColor {
     primary: HexPixelValue;
+    primaryActive: HexPixelValue;
     background: HexPixelValue;
     label: HexPixelValue;
 }
@@ -43,7 +44,6 @@ interface LabelText {
     subtitle: TextStyle,
     secondaryHeadline: TextStyle,
     body: TextStyle,
-    action: TextStyle,
     header: TextStyle,
     section: TextStyle,
     prominent: TextStyle,
@@ -75,61 +75,55 @@ function createTheme(
             caption: {
                 fontSize: fontSize.smaller,
                 fontWeight: fontWeight.regular,
-                fontFamily: 'Roboto'
+                fontFamily: 'Noto Sans'
             },
 
             body: {
                 fontSize: fontSize.regular,
                 fontWeight: fontWeight.regular,
-                fontFamily: 'Roboto',
+                fontFamily: 'Noto Sans',
             },
 
             secondaryHeadline: {
                 fontSize: fontSize.regular,
                 fontWeight: fontWeight.medium,
-                fontFamily: 'Roboto'
-            },
-
-            action: {
-                fontSize: fontSize.regular,
-                fontWeight: fontWeight.medium,
-                fontFamily: 'Roboto',
+                fontFamily: 'Noto Sans'
             },
 
             callout: {
                 fontSize: fontSize.medium,
                 fontWeight: fontWeight.medium,
-                fontFamily: 'Roboto'
+                fontFamily: 'Noto Sans'
             },
 
             subtitle: {
                 fontSize: fontSize.medium,
                 fontWeight: fontWeight.medium,
-                fontFamily: 'Roboto'
+                fontFamily: 'Noto Sans'
             },
 
             header: {
                 fontSize: fontSize.regular,
                 fontWeight: fontWeight.bold,
-                fontFamily: 'Roboto',
+                fontFamily: 'Noto Sans',
             },
 
             section: {
                 fontSize: fontSize.prominent,
                 fontWeight: fontWeight.regular,
-                fontFamily: 'Roboto',
+                fontFamily: 'Noto Sans',
             },
 
             prominent: {
                 fontSize: fontSize.prominent,
                 fontWeight: fontWeight.bold,
-                fontFamily: 'Roboto'
+                fontFamily: 'Noto Sans'
             },
 
             title: {
                 fontSize: fontSize.xl,
                 fontWeight: fontWeight.bold,
-                fontFamily: 'Roboto'
+                fontFamily: 'Noto Sans'
             },
         }
     }
@@ -138,6 +132,7 @@ function createTheme(
 const denverPostTheme: AppTheme = createTheme(
     /*color:*/ {
         primary: '#7d161e',
+        primaryActive: '#c81632',
         background: '#FFFFFF',
         label: '#0a0908'
     },
