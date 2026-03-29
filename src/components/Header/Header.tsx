@@ -6,6 +6,7 @@ import { useScreenWidth } from "../../Context/Screen Size/UseScreenWidth";
 import { useTheme } from "../theme/theme";
 import { Breakpoint } from "../../Context/Screen Size/Breakpoint";
 import HeaderAction from "./HeaderAction";
+import logo from '../../assets/denver.post.logo.svg'
 
 import './header.css';
 
@@ -16,6 +17,9 @@ import './header.css';
  *    the logo of the website appears centered, 
  *    hamburger's label is hidden. An underline appears below the component.
  * - Mobile: (< 800px): Website logo gets bigger.
+ * 
+ * @todo:
+ *  - Implement a level 1 heading for accessibility
  */
 const Header: React.FC = () => {
   const screenWidth = useScreenWidth();
@@ -48,11 +52,18 @@ const Header: React.FC = () => {
           </Text>
         </button>
         
+        {
+          screenWidth < Breakpoint.laptop && (
+            <img src={logo} 
+                alt="The Denver Post"
+                aria-label="The Denver Post"/>
+          )
+        }
         
         <nav role="navigation">
           <ul>
             {
-              screenWidth > Breakpoint.phablet && (
+              screenWidth >= Breakpoint.laptop && (
                 <li>
                   <HeaderAction>
                     <Text font={theme.textStyle.secondaryHeadline}>
@@ -62,7 +73,7 @@ const Header: React.FC = () => {
                 </li>
               )}
             {
-              screenWidth > Breakpoint.phablet && (
+              screenWidth >= Breakpoint.laptop && (
               <li>
                 <HeaderAction>
                   <Text font={theme.textStyle.secondaryHeadline}>
