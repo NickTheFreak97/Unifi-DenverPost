@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { type JSX } from 'react';
 import type { TextStyle } from '../theme/theme';
 
-export interface TextProps {
+export interface TextProps<T extends keyof JSX.IntrinsicElements = "span"> {
     children: React.ReactNode;
     font?: Partial<TextStyle>;
     style?: React.CSSProperties;
     className?: string;
     id?: string
+    as?: T
 }
 
-const Text = (props: TextProps) => {
+const Text = <T extends keyof JSX.IntrinsicElements = "span">(props: TextProps<T>) => {
+    const Component = props.as || "span";
     return (
-        <span 
+        <Component 
             className={props.className} 
             id={props.id}
             style={{
@@ -21,7 +23,7 @@ const Text = (props: TextProps) => {
                 fontFamily: props.font?.fontFamily,
             }}>
             {props.children}
-        </span>
+        </Component>
     );
 }
 

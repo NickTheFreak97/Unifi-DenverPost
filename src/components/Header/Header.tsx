@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 import Text from "../Common/Text";
 
@@ -25,80 +25,116 @@ const Header: React.FC = () => {
   const screenWidth = useScreenWidth();
   const theme = useTheme();
 
-  return (
-    <header>
-      <div id="header-wrapper">
-        <button 
-          aria-haspopup="true"
-          aria-expanded={false}
-          className="unstyled-button tappable-icon-btn"
-          tabIndex={0}
-        >
-          <span 
-              className="material-symbols-outlined"
-              style={{
-                fontSize: theme.textStyle.secondaryHeadline.fontSize,
-                fontWeight: theme.textStyle.secondaryHeadline.fontWeight
-              }}
-            >
-            dehaze
-          </span>
+  const scrollListenerRef = useRef<HTMLDivElement | null>(null);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
 
-          <Text
-            font={theme.textStyle.secondaryHeadline}
-            className={screenWidth <= Breakpoint.phablet ? "visually-hidden" : undefined}
+  useEffect(() => {
+    var observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          if (entry.isIntersecting) {
+             setIsSticky(false); 
+          } else {
+            setIsSticky(true);
+          }
+        })
+      }, 
+
+      {
+        threshold: [0, 1],
+      }
+    );
+
+    if (!!scrollListenerRef && !!scrollListenerRef.current) {
+      observer.observe(scrollListenerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [scrollListenerRef])
+
+  return (
+    <React.Fragment>
+      <div 
+        ref={scrollListenerRef} 
+        className="hidden-scroll-listener" 
+        aria-hidden="true"
+        tabIndex={-1}
+      />
+
+      <header className={isSticky ? "sticky-header" : undefined}>
+        <div id="header-wrapper">
+          <button 
+            aria-haspopup="true"
+            aria-expanded={false}
+            className="unstyled-button tappable-icon-btn"
+            tabIndex={0}
           >
-            All Sections
-          </Text>
-        </button>
-        
-        {
-          screenWidth < Breakpoint.laptop && (
-            <img src={logo} 
-                alt="The Denver Post"
-                aria-label="The Denver Post"/>
-          )
-        }
-        
-        <nav role="navigation">
-          <ul>
-            {
-              screenWidth >= Breakpoint.laptop && (
+            <span 
+                className="material-symbols-outlined"
+                style={{
+                  fontSize: theme.textStyle.secondaryHeadline.fontSize,
+                  fontWeight: theme.textStyle.secondaryHeadline.fontWeight
+                }}
+              >
+              dehaze
+            </span>
+
+            <Text
+              font={theme.textStyle.secondaryHeadline}
+              className={screenWidth <= Breakpoint.phablet ? "visually-hidden" : undefined}
+            >
+              All Sections
+            </Text>
+          </button>
+          
+          {
+            screenWidth < Breakpoint.laptop && (
+              <img src={logo} 
+                  alt="The Denver Post"
+                  aria-label="The Denver Post"/>
+            )
+          }
+          
+          <nav role="navigation">
+            <ul>
+              {
+                screenWidth >= Breakpoint.laptop && (
+                  <li>
+                    <HeaderAction>
+                      <Text font={theme.textStyle.secondaryHeadline}>
+                        Subscribe
+                      </Text>
+                    </HeaderAction>
+                  </li>
+                )}
+              {
+                screenWidth >= Breakpoint.laptop && (
                 <li>
                   <HeaderAction>
                     <Text font={theme.textStyle.secondaryHeadline}>
-                      Subscribe
+                      Log in
                     </Text>
                   </HeaderAction>
                 </li>
               )}
-            {
-              screenWidth >= Breakpoint.laptop && (
               <li>
-                <HeaderAction>
-                  <Text font={theme.textStyle.secondaryHeadline}>
-                    Log in
-                  </Text>
-                </HeaderAction>
+                <span 
+                  style={{padding: "0px 12px",}}
+                  className="material-symbols-outlined tappable-icon-btn"
+                  aria-label="Search"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded={false}
+                  tabIndex={0}
+                >
+                  search
+                </span>
               </li>
-            )}
-            <li>
-              <span 
-                style={{padding: "0px 12px",}}
-                className="material-symbols-outlined tappable-icon-btn"
-                aria-label="Search"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded={false}
-                tabIndex={0}
-              >
-                search
-              </span>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </React.Fragment>
   );
 };
 
