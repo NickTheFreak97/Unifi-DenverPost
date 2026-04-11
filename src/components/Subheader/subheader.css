@@ -35,7 +35,8 @@
 }
 
 .subheader-denverpost-logo {
-    height: 69%;
+    max-height: 69%;
+    max-width: 33%;
     position: absolute;
     top: 50%;
     right: 50%;

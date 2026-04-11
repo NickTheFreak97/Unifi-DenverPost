@@ -62,7 +62,7 @@ const Header: React.FC = () => {
         inert
       />
 
-      <header className={isSticky ? "sticky-header" : undefined}>
+      <section className={isSticky ? "sticky-header denverpost-header" : "denverpost-header"}>
         <div id="header-wrapper">
           <button 
             aria-haspopup="true"
@@ -82,13 +82,13 @@ const Header: React.FC = () => {
 
             <Text
               font={theme.textStyle.secondaryHeadline}
-              className={screenWidth <= Breakpoint.phablet ? "visually-hidden" : undefined}
+              className={screenWidth <= Breakpoint.tablet ? "visually-hidden" : undefined}
             >
               All Sections
             </Text>
           </button>
           
-          { screenWidth <= Breakpoint.laptop && 
+          { screenWidth < Breakpoint.laptop && 
             <img src={logo} 
                 alt="The Denver Post"
                 aria-label="The Denver Post"/>
@@ -132,7 +132,7 @@ const Header: React.FC = () => {
             </ul>
           </nav>
         </div>
-      </header>
+      </section>
     </React.Fragment>
   );
 };

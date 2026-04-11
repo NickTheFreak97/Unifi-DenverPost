@@ -5,7 +5,7 @@ import { useTheme } from '../theme/theme'
 import './navbar.css'
 
 const Navbar = () => {
-    return <ul className='arguments-navbar' role="navigation">
+    return <ul className='arguments-navbar' role="list">
         <NavigationLink destination='News'/>
         <NavigationLink destination='Sports'/>
         <NavigationLink destination='Business'/>
