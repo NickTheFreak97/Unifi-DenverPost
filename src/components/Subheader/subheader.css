@@ -1,0 +1,43 @@
+:root {
+    --subheader-height: 69px;
+}
+
+.denverpost-subheader {
+    display: flex;
+    align-items: center;
+    width: var(--page-wrapper-width);
+    height: var(--subheader-height);
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.denverpost-subheader hgroup#denverpost-weather {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0px 12px;
+}
+
+
+.denverpost-subheader hgroup#denverpost-today {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    cursor: pointer;
+}
+
+
+.denverpost-today-text-ul:hover {
+    text-decoration: underline;
+}
+
+.subheader-denverpost-logo {
+    height: 69%;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}

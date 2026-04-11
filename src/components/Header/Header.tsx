@@ -9,6 +9,7 @@ import HeaderAction from "./HeaderAction";
 import logo from '../../assets/denver.post.logo.svg'
 
 import './header.css';
+import '../../index.css'
 
 
 /**
@@ -57,8 +58,8 @@ const Header: React.FC = () => {
       <div 
         ref={scrollListenerRef} 
         className="hidden-scroll-listener" 
-        aria-hidden="true"
         tabIndex={-1}
+        inert
       />
 
       <header className={isSticky ? "sticky-header" : undefined}>
@@ -87,12 +88,10 @@ const Header: React.FC = () => {
             </Text>
           </button>
           
-          {
-            screenWidth < Breakpoint.laptop && (
-              <img src={logo} 
-                  alt="The Denver Post"
-                  aria-label="The Denver Post"/>
-            )
+          { screenWidth <= Breakpoint.laptop && 
+            <img src={logo} 
+                alt="The Denver Post"
+                aria-label="The Denver Post"/>
           }
           
           <nav role="navigation">
