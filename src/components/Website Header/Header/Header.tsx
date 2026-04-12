@@ -1,15 +1,15 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import Text from "../Common/Text";
+import Text from "../../Common/Text";
 
-import { useScreenWidth } from "../../Context/Screen Size/UseScreenWidth";
-import { useTheme } from "../theme/theme";
-import { Breakpoint } from "../../Context/Screen Size/Breakpoint";
+import { useScreenWidth } from "../../../Context/Screen Size/UseScreenWidth";
+import { useTheme } from "../../theme/theme";
+import { Breakpoint } from "../../../Context/Screen Size/Breakpoint";
 import HeaderAction from "./HeaderAction";
-import logo from '../../assets/denver.post.logo.svg'
+import logo from '../../../assets/denver.post.logo.svg'
 
 import './header.css';
-import '../../index.css'
+import '../../../index.css'
 
 
 /**

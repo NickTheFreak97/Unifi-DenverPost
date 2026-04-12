@@ -1,12 +1,12 @@
 import React from "react"
-import MaterialIcon from "../Common/MaterialIcon"
-import { useTheme } from "../theme/theme"
-import Text from '../Common/Text'
+import MaterialIcon from "../../Common/MaterialIcon"
+import { useTheme } from "../../theme/theme"
+import Text from '../../Common/Text'
 
 import './subheader.css'
-import '../../App.css'
+import '../../../App.css'
 
-import deverPostLogo from '../../assets/denver.post.logo.svg'
+import deverPostLogo from '../../../assets/denver.post.logo.svg'
 
 const Subheader: React.FC = () => {
     const theme = useTheme();

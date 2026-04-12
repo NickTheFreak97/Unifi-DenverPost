@@ -1,11 +1,12 @@
 import React from "react"
 
-import Header from './components/Header/Header';
-import Subheader from "./components/Subheader/Subheader";
-import Navbar from "./components/Navbar/Navbar"
+import Header from './components/Website Header/Header/Header';
+import Subheader from "./components/Website Header/Subheader/Subheader";
+import Navbar from "./components/Website Header/Navbar/Navbar"
 
 import { useScreenWidth } from "./Context/Screen Size/UseScreenWidth";
 import { Breakpoint } from "./Context/Screen Size/Breakpoint";
+import Trending from "./components/Website Header/Trending/Trending";
 
 const App: React.FC = () => {
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <React.Fragment>
           <Subheader />
           <Navbar />
+          <Trending />
         </React.Fragment>
       }
     </header>

@@ -1,8 +1,8 @@
 import React, { use } from "react";
 import { styled } from  'styled-components'
 
-import { useTheme } from "../../components/theme/theme";
-import type { AnyChildren } from "../../types/AnyChildren";
+import { useTheme } from "../../../components/theme/theme";
+import type { AnyChildren } from "../../../types/AnyChildren";
 
 
 const HeaderButton = styled.button<{ $basecolor: string, $hovercolor: string }>`

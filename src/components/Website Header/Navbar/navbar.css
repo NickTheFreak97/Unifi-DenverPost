@@ -30,3 +30,8 @@ ul.arguments-navbar li a {
     justify-content: center;
 }
 
+ul.arguments-navbar li a:hover {
+    color: var(--brand-color);
+    text-decoration: underline;
+}
+

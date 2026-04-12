@@ -1,0 +1,35 @@
+ul#trending-list {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+}
+
+ul#trending-list li {
+    display: inline-flex;
+    padding: 0px 18px 0px 0px;
+    margin-left: 15px;
+}
+
+ul#trending-list li a {
+    color: black;
+    text-decoration: none;
+}
+
+ul#trending-list li:first-child {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--brand-color);
+    font-family: 'Noto Sans';
+}
+
+
+ul#trending-list li a:hover {
+    color: var(--brand-color);
+}
