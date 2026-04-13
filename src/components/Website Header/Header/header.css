@@ -40,11 +40,12 @@
 }
 
 .denverpost-header {
-      width: 100%;
-      height: var(--header-height);
-      border-bottom-width: 0px;
-      border-bottom-style: none;
-      border-bottom-color: transparent;
+    width: 100%;
+    height: var(--header-height);
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+    border-bottom-color: transparent;
+    background-color: white;
 }
 
 .denverpost-header.sticky-header {

@@ -7,6 +7,8 @@ import Navbar from "./components/Website Header/Navbar/Navbar"
 import { useScreenWidth } from "./Context/Screen Size/UseScreenWidth";
 import { Breakpoint } from "./Context/Screen Size/Breakpoint";
 import Trending from "./components/Website Header/Trending/Trending";
+import PageShield from "./components/Page/Page Shield/PageShield";
+import FeaturedDisplayCase from "./components/Page/Display Case/Featured/FeaturedDisplayCase";
 
 const App: React.FC = () => {
 
@@ -24,6 +26,9 @@ const App: React.FC = () => {
         </React.Fragment>
       }
     </header>
+    <PageShield>
+        <FeaturedDisplayCase />
+    </PageShield>
   </React.Fragment>
   )
 }

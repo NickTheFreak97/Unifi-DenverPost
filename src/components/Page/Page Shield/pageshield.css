@@ -1,0 +1,8 @@
+#page-shield {
+    max-width: 1280px;
+    width: 100%;
+    flex: 1;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 300px 16px 0px 16px;
+}

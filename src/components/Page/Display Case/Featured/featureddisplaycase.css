@@ -1,0 +1,32 @@
+.featured-display-wrapper {
+    width: 75%;
+}
+
+.featured-display-main-flow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    gap: 20px;
+    max-width: 75%;
+}
+
+
+.featured-prominent-news-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-items: flex-start;
+}
+
+.featured-prominent-news-headline-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.featured-prominent-news-wrapper img {
+    height: auto;
+    flex: 1;
+}
