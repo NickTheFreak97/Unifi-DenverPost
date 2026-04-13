@@ -1,5 +1,8 @@
 .featured-display-wrapper {
     width: 75%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 .featured-display-main-flow {
@@ -29,4 +32,25 @@
 .featured-prominent-news-wrapper img {
     height: auto;
     flex: 1;
+}
+
+
+@media screen and (min-width: 801px) and (max-width: 1280px) {
+    .featured-display-main-flow {
+        max-width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .featured-display-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .featured-display-main-flow {
+        max-width: 100%;
+        width: 100%;
+    }
+    
 }

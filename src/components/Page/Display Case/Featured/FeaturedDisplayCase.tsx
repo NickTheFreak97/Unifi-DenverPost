@@ -1,12 +1,14 @@
-import React from "react";
-import { Placeholder } from 'placeholder';
+import React, { useEffect } from "react";
 import { LoremIpsum } from "lorem-ipsum";
 
 import Text from "../../../Common/Text"; 
 import { useTheme } from "../../../theme/theme";
+import { useScreenWidth } from "../../../../Context/Screen Size/UseScreenWidth";
 
 import './featureddisplaycase.css'
 import MainPlaceholder from '../../../../assets/Placeholders/391x260.svg';
+import { Breakpoint } from "../../../../Context/Screen Size/Breakpoint";
+import FeaturedHeadlinesFeed from "./Headlines Feed/FeaturedHeadlinesFeed";
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -26,29 +28,46 @@ const FeaturedDisplayCase: React.FC = () => {
             <div className="featured-display-main-flow">
                 <ProminentNews />
             </div>
+            <FeaturedHeadlinesFeed />
         </section>
     );
 };
 
 
-/*
-* @todo: Implement reactivity of this component. Headline -> Image -> Subheadline
-*/
+
 const ProminentNews: React.FC = () => {
     const theme = useTheme();
+    const screenWidth = useScreenWidth();
+
+    const articleImage = <img src={MainPlaceholder} alt="placeholder image for the most prominent story" />
+
+    useEffect(
+        () => {
+            console.log(screenWidth)
+        }, [screenWidth]
+    )
 
     return (
         <article className="featured-prominent-news-wrapper">
             <div className="featured-prominent-news-headline-wrapper">
-                <Text as="h1" font={theme.textStyle.title}>
+                <Text as="h1" font={theme.textStyle.title} style={{ lineHeight: 1 }}>
                     {lorem.generateSentences(1)}
                 </Text>
+
+                {
+                    (screenWidth <= Breakpoint.mobile || (screenWidth >= Breakpoint.tablet && screenWidth <= Breakpoint.laptop)) &&
+                        articleImage
+                }
 
                 <Text as="h1" font={theme.textStyle.body} style={{ fontWeight: 300 }}>
                     {lorem.generateSentences(1)}
                 </Text>
             </div>
-            <img src={MainPlaceholder} alt="placeholder image for the most prominent story" />
+
+        {
+            (screenWidth == Breakpoint.phablet || screenWidth > Breakpoint.laptop) &&
+                articleImage
+        }            
         </article>
     )
 }

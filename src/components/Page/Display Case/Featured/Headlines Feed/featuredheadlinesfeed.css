@@ -1,0 +1,36 @@
+:root {
+    --featured-headlines-gap: 32px;
+}
+
+.featured-headlines-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--featured-headlines-gap);
+    list-style-type: none;
+    max-width: 25%;
+}
+
+
+.featured-headlines-list li {
+    position: relative;
+}
+
+.featured-headlines-list li:not(:first-child):before {
+    content: "";
+    background-color: #bfbfbf;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transform: translateY(calc(-1*var(--featured-headlines-gap) / 2.0));
+}
+
+
+.featured-headlines-list li a {
+    cursor: pointer;
+}
+
+.featured-headlines-list li a:hover {
+    color: var(--brand-color);
+}
