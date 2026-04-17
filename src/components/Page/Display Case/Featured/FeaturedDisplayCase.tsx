@@ -9,6 +9,7 @@ import './featureddisplaycase.css'
 import MainPlaceholder from '../../../../assets/Placeholders/391x260.svg';
 import { Breakpoint } from "../../../../Context/Screen Size/Breakpoint";
 import FeaturedHeadlinesFeed from "./Headlines Feed/FeaturedHeadlinesFeed";
+import ProminentNewsGrid from "./Prominent News Grid/ProminentNewsGrid";
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -27,6 +28,8 @@ const FeaturedDisplayCase: React.FC = () => {
         <section className="featured-display-wrapper">
             <div className="featured-display-main-flow">
                 <ProminentNews />
+                <Divider />
+                <ProminentNewsGrid />
             </div>
             <FeaturedHeadlinesFeed />
         </section>
@@ -41,16 +44,10 @@ const ProminentNews: React.FC = () => {
 
     const articleImage = <img src={MainPlaceholder} alt="placeholder image for the most prominent story" />
 
-    useEffect(
-        () => {
-            console.log(screenWidth)
-        }, [screenWidth]
-    )
-
     return (
         <article className="featured-prominent-news-wrapper">
             <div className="featured-prominent-news-headline-wrapper">
-                <Text as="h1" font={theme.textStyle.title} style={{ lineHeight: 1 }}>
+                <Text as="a" aria-role="heading" aria-level="1" font={theme.textStyle.title} style={{ lineHeight: 1 }}>
                     {lorem.generateSentences(1)}
                 </Text>
 
@@ -72,6 +69,23 @@ const ProminentNews: React.FC = () => {
     )
 }
 
+
+const Divider: React.FC = () => {
+    return <div 
+        aria-hidden="true" 
+        tabIndex={-1} 
+        style={{
+            width: "100%",
+            height: "1px",
+            backgroundColor: "var(--separator-color)",
+            marginTop: "16px"
+        }}
+    />
+}
+
 export default FeaturedDisplayCase;
+
+
+
 
 

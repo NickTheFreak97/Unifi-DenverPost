@@ -1,0 +1,17 @@
+.prominent-news-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+.prominent-news-grid article a:hover {
+    color: var(--brand-color);
+    cursor: pointer;
+}
+
+
+.prominent-news-grid article img:hover {
+    cursor: pointer;
+}

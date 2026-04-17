@@ -17,10 +17,10 @@ const Text = <T extends keyof JSX.IntrinsicElements = "span">(props: TextProps<T
             className={props.className} 
             id={props.id}
             style={{
-                ...props.style,
                 fontSize: props.font?.fontSize,
                 fontWeight: props.font?.fontWeight,
                 fontFamily: props.font?.fontFamily,
+                ...props.style,
             }}>
             {props.children}
         </Component>
