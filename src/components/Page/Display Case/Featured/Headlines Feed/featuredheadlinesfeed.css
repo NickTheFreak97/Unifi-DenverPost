@@ -8,7 +8,7 @@
     align-items: flex-start;
     gap: var(--featured-headlines-gap);
     list-style-type: none;
-    max-width: 25%;
+    max-width: 18.75%;
 }
 
 
@@ -33,4 +33,10 @@
 
 .featured-headlines-list li a:hover {
     color: var(--brand-color);
+}
+
+@media screen and (max-width: 1280px) {
+    .featured-headlines-list {
+        flex: 1;
+    }
 }

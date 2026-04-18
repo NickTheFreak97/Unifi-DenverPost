@@ -10,6 +10,7 @@ import MainPlaceholder from '../../../../assets/Placeholders/391x260.svg';
 import { Breakpoint } from "../../../../Context/Screen Size/Breakpoint";
 import FeaturedHeadlinesFeed from "./Headlines Feed/FeaturedHeadlinesFeed";
 import ProminentNewsGrid from "./Prominent News Grid/ProminentNewsGrid";
+import Advertisement from "./Advertisement/Advertisement";
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -32,6 +33,7 @@ const FeaturedDisplayCase: React.FC = () => {
                 <ProminentNewsGrid />
             </div>
             <FeaturedHeadlinesFeed />
+            <Advertisement />
         </section>
     );
 };
@@ -80,6 +82,7 @@ const Divider: React.FC = () => {
             backgroundColor: "var(--separator-color)",
             marginTop: "16px"
         }}
+        inert
     />
 }
 

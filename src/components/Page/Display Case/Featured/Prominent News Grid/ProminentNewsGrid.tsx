@@ -34,7 +34,7 @@ const ProminentNewsCell: React.FC = () => {
 
     return (
         <article style={{paddingBottom: "16px"}}>
-            <img src={NewsPlaceholder} alt="featured news (0,0)" width={"100%"} height="auto"/>
+            <img src={NewsPlaceholder} alt="featured news (0,0)"/>
             <Text as="a" font={theme.textStyle.prominent} style={{ lineHeight: 1.1 }} aria-role="heading" aria-level="2">
                 {lorem.generateSentences(1)}
             </Text>
