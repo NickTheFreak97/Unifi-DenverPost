@@ -5,6 +5,7 @@ import Text from "../../../../Common/Text";
 import { useTheme } from "../../../../theme/theme";
 
 import './featuredheadlinesfeed.css'
+import '../featured.css'
 
 enum Time {
     minutes,

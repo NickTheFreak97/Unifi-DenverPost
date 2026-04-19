@@ -1,0 +1,69 @@
+/*
+    Single place where to adjust the layout size of the content of the featured sections.
+    Cause moving between files to adjust layout is tedious and error prone.
+*/
+
+.featured-display-main-flow {
+    width: 60%;
+}
+
+.featured-headlines-list {
+    max-width: 18.75%;
+}
+
+#ads-banner {
+    width: 18.75%;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .featured-display-main-flow {
+        width: 47%;
+    }
+
+    .featured-headlines-list {
+        max-width: 23%;
+    }
+
+    #ads-banner {
+        width: 100%;
+        max-width: 30%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    .featured-display-main-flow {
+        width: 47%;
+    }
+
+    .featured-headlines-list {
+        max-width: 26.5%;
+    }
+
+    #ads-banner {
+        width: 100%;
+        max-width: 26.5%;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1280px) {
+    .featured-display-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .featured-display-main-flow {
+        max-width: 60%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .featured-prominent-news-wrapper > * {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .featured-display-main-flow {
+        max-width: 100%;
+        width: 100%;
+    }
+}
