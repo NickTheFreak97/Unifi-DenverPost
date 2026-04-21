@@ -1,0 +1,10 @@
+.briefs-container {
+    display: flex; 
+    flex-direction: row;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 100px;
+    max-width: 80%;
+    width: 100%;
+}
+

@@ -39,9 +39,11 @@ const RecommendedFYP: React.FC = () => {
                     placeholders.map((placeholder) => {
                         return (
                             <li key={placeholder}>
-                                <Text as="span" font={theme.textStyle.header}>
-                                    {placeholder}
-                                </Text>
+                                <article>
+                                    <Text as="a" font={theme.textStyle.header}>
+                                        {placeholder}
+                                    </Text>
+                                </article>
                             </li>
                         )
                     })

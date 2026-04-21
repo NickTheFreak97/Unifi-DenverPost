@@ -47,8 +47,13 @@
     min-height: calc(2 * var(--bullet-radius));
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
+
+#fyp ul li:hover a {
+    color: var(--brand-color);
+}
 
 #fyp ul li::before {
     content: counter(item);
