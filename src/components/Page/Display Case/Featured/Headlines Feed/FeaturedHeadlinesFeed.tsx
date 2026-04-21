@@ -6,6 +6,7 @@ import { useTheme } from "../../../../theme/theme";
 
 import './featuredheadlinesfeed.css'
 import '../featured.css'
+import HeaderAction from "../../../../Website Header/Header/HeaderAction";
 
 enum Time {
     minutes,
@@ -124,6 +125,7 @@ const FeaturedHeadlinesFeed: React.FC = () => {
 
     return (
         <ul className="featured-headlines-list">
+            <li>Latest Headlines</li>
             {
                 randomHeadlines.map( headline => {
                     return <li key={headline.getTitle()}>
@@ -139,6 +141,16 @@ const FeaturedHeadlinesFeed: React.FC = () => {
                     </li>
                 })
             }
+            <li>
+                <Text as="span" font={theme.textStyle.subtitle} style={{fontWeight: 700}}>
+                    Sign up for Newsletters and Alerts
+                </Text>
+                <HeaderAction>
+                    <Text font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}}>
+                      Sign Up
+                    </Text>
+                </HeaderAction>
+            </li>
         </ul>
     )
 }
