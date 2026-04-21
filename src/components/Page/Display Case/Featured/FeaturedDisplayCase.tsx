@@ -4,15 +4,13 @@ import { LoremIpsum } from "lorem-ipsum";
 import Text from "../../../Common/Text"; 
 import { useTheme } from "../../../theme/theme";
 import { useScreenWidth } from "../../../../Context/Screen Size/UseScreenWidth";
+
+import './featureddisplaycase.css'
+import MainPlaceholder from '../../../../assets/Placeholders/391x260.svg';
 import { Breakpoint } from "../../../../Context/Screen Size/Breakpoint";
 import FeaturedHeadlinesFeed from "./Headlines Feed/FeaturedHeadlinesFeed";
 import ProminentNewsGrid from "./Prominent News Grid/ProminentNewsGrid";
 import Advertisement from "./Advertisement/Advertisement";
-
-import MainPlaceholder from '../../../../assets/Placeholders/391x260.svg';
-import './featureddisplaycase.css'
-import './featured.css'
-
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {

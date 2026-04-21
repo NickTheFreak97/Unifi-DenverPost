@@ -9,6 +9,7 @@ import { Breakpoint } from "./Context/Screen Size/Breakpoint";
 import Trending from "./components/Website Header/Trending/Trending";
 import PageShield from "./components/Page/Page Shield/PageShield";
 import FeaturedDisplayCase from "./components/Page/Display Case/Featured/FeaturedDisplayCase";
+import RecommendedFYP from "./components/Page/Display Case/Recommended/Recommended";
 
 const App: React.FC = () => {
 
@@ -28,6 +29,7 @@ const App: React.FC = () => {
     </header>
     <PageShield>
         <FeaturedDisplayCase />
+        <RecommendedFYP />
     </PageShield>
   </React.Fragment>
   )

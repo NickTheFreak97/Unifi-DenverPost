@@ -1,0 +1,68 @@
+:root {
+    --bullet-radius: 16px;
+}
+
+#fyp {
+    padding-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+#fyp h2 {
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+    text-align: left;
+    color: var(--brand-color);
+}
+
+#fyp h2::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: var(--brand-color);
+    left: 0;
+}
+
+#fyp ul {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    row-gap: 16px;
+    list-style-type: none;
+    counter-reset: item;
+}
+
+
+#fyp ul li {
+    margin-left: calc(2 * var(--bullet-radius) + 16px);
+    position: relative;
+    min-height: calc(2 * var(--bullet-radius));
+    display: flex;
+    align-items: center;
+}
+
+
+#fyp ul li::before {
+    content: counter(item);
+    width: calc(2 * var(--bullet-radius));
+    height: calc(2 * var(--bullet-radius));
+    border-radius: var(--bullet-radius);
+    background-color: var(--brand-color);
+    position: absolute;
+    left: calc(-2 * var(--bullet-radius) - 16px);
+    counter-increment: item;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans';
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
