@@ -4,6 +4,7 @@
 
 #fyp {
     padding-top: 100px;
+    max-width: 80%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -65,4 +66,33 @@
     font-weight: 700;
     font-size: 16px;
     color: white;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    #fyp {
+        max-width: 70%;
+    }  
+}
+
+
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    #fyp {
+        max-width: 60%;
+    }  
+}
+
+
+
+@media screen and (max-width: 800px) {
+    #fyp {
+        max-width: 100%;
+    }  
+}
+
+
+@media screen and (max-width: 640px) {
+    #fyp ul {
+        grid-template-columns: 1fr;
+    }
 }
