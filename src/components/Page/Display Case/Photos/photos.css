@@ -1,0 +1,37 @@
+:root {
+    --indicator-size: 50px;
+}
+
+#photos-container {
+    margin-top: 100px;
+    max-width: 80%;
+    width: 100%;
+    position: relative;
+    margin-bottom: calc(var(--indicator-size) * 0.7071);
+}
+
+
+#photos-container::after {
+    position: absolute;
+    content: "";
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: var(--separator-color);
+    z-index: 0;
+}
+
+
+#more-photos-indicator {
+    background-color: #fbfbfb;
+    width: var(--indicator-size);
+    height: var(--indicator-size);
+    transform-origin: center;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+    left: 50%;
+    border-right: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+    z-index: 1;
+    position: relative;
+}

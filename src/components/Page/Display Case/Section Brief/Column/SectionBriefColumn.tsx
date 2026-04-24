@@ -1,12 +1,12 @@
 import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
-import Text from "../../../Common/Text";
-import { useTheme } from "../../../theme/theme";
+import Text from "../../../../Common/Text";
+import { useTheme } from '../../../../theme/theme'
 
 import './sectionbriefcolumn.css'
-import PlaceholderA from '../../../../assets/Placeholders/273x181.svg'
-import PlaceholderB from '../../../../assets/Placeholders/345x230.svg'
-import PlaceholderC from '../../../../assets/Placeholders/589x392.svg'
+import PlaceholderA from '../../../../../assets/Placeholders/273x181.svg'
+import PlaceholderB from '../../../../../assets/Placeholders/345x230.svg'
+import PlaceholderC from '../../../../../assets/Placeholders/589x392.svg'
 
 const lorem = new LoremIpsum({
     sentencesPerParagraph: {
