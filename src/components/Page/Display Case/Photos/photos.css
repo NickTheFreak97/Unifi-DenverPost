@@ -7,7 +7,7 @@
     max-width: 80%;
     width: 100%;
     position: relative;
-    margin-bottom: calc(var(--indicator-size) * 0.7071);
+    margin-bottom: calc(2 * var(--indicator-size) * 0.7071);
 }
 
 
@@ -30,8 +30,181 @@
     transform-origin: center;
     transform: translateX(-50%) translateY(50%) rotate(45deg);
     left: 50%;
+    bottom: 0;
     border-right: 1px solid var(--separator-color);
     border-bottom: 1px solid var(--separator-color);
     z-index: 1;
+    position: absolute;
+}
+
+
+#photos-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-bottom: calc(var(--indicator-size) * 0.7071);
+}
+
+
+#photos-wrapper a {
+    text-decoration: none;
+    color: black;
+}
+
+
+#photos-wrapper a:hover {
+    text-decoration: none;
+    color: var(--brand-color);
+}
+
+#photos-wrapper a h2 {
+    font-size: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    line-height: 1;
+}
+
+/*
+I wish I knew <img>::after is replaced with a void element!!!!
+*/
+.photos-img-wrapper {
+    display: inline-block;
     position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+#photos-wrapper article .photos-img-wrapper::after {
+    content: '\e3f4';
+    font-family: 'Material Symbols Outlined' !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 33px;
+    height: 33px;
+    background-color: rgba(0,0,0,0.7);
+    color: white;
+    border: 1px solid white;
+    border-radius: calc(33px / 2);
+    bottom: 0;
+    right: 0;
+    transform: translate(-5px, -8px);
+    cursor: pointer;
+}
+
+#photos-wrapper li article .photos-img-wrapper::after {
+    width: 20px;
+    height: 20px;
+    border-radius: calc(20px / 2);
+    font-size: 12px;
+}
+
+#photos-wrapper article .photos-img-wrapper:hover::after {
+    background-color: var(--brand-color);
+}
+
+
+#photos-wrapper ul {
+    list-style-type: none;
+    max-width: 40%;
+    width: 100%;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+#photos-wrapper ul li {
+    position: relative;
+}
+
+#photos-wrapper ul li:not(:last-child)::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    transform: translateY(16px);
+    content: "";
+    background-color: var(--separator-color);
+}
+
+#photos-wrapper ul li article {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+a#show-more-photos {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(var(--indicator-size) * 0.7071 * 2));
+    color: var(--brand-color);
+}
+
+
+
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    #photos-container {
+        max-width: 67%;
+    }
+
+    #photos-wrapper > article {
+        max-width: 60%;
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+    #photos-wrapper ul {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #photos-wrapper {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
+    #photos-wrapper ul li {
+        height: 100%;
+    }
+
+    #photos-wrapper ul {
+        max-width: 100%;
+        display: grid;
+        column-gap: 16px;
+        row-gap: 32px;
+        padding-left: 0;
+    }
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    #photos-container {
+        max-width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    #photos-container {
+        max-width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    #photos-wrapper ul {
+        grid-template-columns: 1fr;
+    }
 }

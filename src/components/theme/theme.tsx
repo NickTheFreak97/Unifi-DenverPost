@@ -41,6 +41,7 @@ export interface FontWeight {
 
 interface LabelText {
     title: TextStyle,
+    featured: TextStyle,
     subtitle: TextStyle,
     secondaryHeadline: TextStyle,
     body: TextStyle,
@@ -117,6 +118,12 @@ function createTheme(
             prominent: {
                 fontSize: fontSize.prominent,
                 fontWeight: fontWeight.bold,
+                fontFamily: 'Noto Sans'
+            },
+
+            featured: {
+                fontSize: fontSize.large,
+                fontWeight: fontWeight.medium,
                 fontFamily: 'Noto Sans'
             },
 

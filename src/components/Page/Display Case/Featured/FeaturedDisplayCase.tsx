@@ -49,7 +49,7 @@ const ProminentNews: React.FC = () => {
     return (
         <article className="featured-prominent-news-wrapper">
             <div className="featured-prominent-news-headline-wrapper">
-                <Text as="a" aria-role="heading" aria-level={1} font={theme.textStyle.title} style={{ lineHeight: 1 }}>
+                <Text as="a" font={theme.textStyle.title} style={{ lineHeight: 1 }}>
                     {lorem.generateSentences(1)}
                 </Text>
 
