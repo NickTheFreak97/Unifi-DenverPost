@@ -30,7 +30,7 @@ export const ScreenWidthProvider: React.FC<AnyChildren> = (props) => {
 
 
     useEffect(() => {
-        const handleWindowResize: (arg0: UIEvent) => void = (event: UIEvent)  => {
+        const handleWindowResize: (arg0: UIEvent) => void = ()  => {
             setScreenWidth(makeBreakpointFromWidth(window.innerWidth));
         }
 

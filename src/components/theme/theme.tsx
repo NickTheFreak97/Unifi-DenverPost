@@ -1,4 +1,4 @@
-import React, { useContext, createContext, useState } from 'react'
+import React, { useContext, createContext } from 'react'
 import type { AnyChildren } from '../../types/AnyChildren';
 
 export type CSSSizeValue = `${number}px` | `${number}em` | `${number}rem`;
