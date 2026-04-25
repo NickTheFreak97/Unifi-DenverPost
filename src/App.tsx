@@ -12,10 +12,20 @@ import FeaturedDisplayCase from "./components/Page/Display Case/Featured/Feature
 import RecommendedFYP from "./components/Page/Display Case/Recommended/Recommended";
 import Briefs from "./components/Page/Display Case/Section Brief/Briefs";
 import Photos from "./components/Page/Display Case/Photos/Photos";
+import QuickReads from "./components/Page/Display Case/Quick Reads/QuickReads";
 
 const App: React.FC = () => {
 
   const screenWidth = useScreenWidth()
+  const rangeOfQuickReads = (()=>{
+    var keysInRange = []
+
+    for(var i=0; i < 9; i++) {
+      keysInRange.push(i)
+    }
+
+    return keysInRange
+  })()
 
   return (
   <React.Fragment>
@@ -34,6 +44,15 @@ const App: React.FC = () => {
         <RecommendedFYP />
         <Briefs />
         <Photos />
+        <React.Fragment>
+          {
+            rangeOfQuickReads.map((sectionNumber) => {
+              return (
+                <QuickReads key={sectionNumber} />
+              )
+            })
+          }
+        </React.Fragment>
     </PageShield>
   </React.Fragment>
   )

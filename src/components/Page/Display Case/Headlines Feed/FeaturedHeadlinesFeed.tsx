@@ -1,12 +1,12 @@
 import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
 
-import Text from "../../../../Common/Text";
-import { useTheme } from "../../../../theme/theme";
+import Text from "../../../Common/Text";
+import { useTheme } from "../../../theme/theme";
 
 import './featuredheadlinesfeed.css'
-import '../featured.css'
-import HeaderAction from "../../../../Website Header/Header/HeaderAction";
+import '../Featured/featured.css'
+import HeaderAction from "../../../Website Header/Header/HeaderAction";
 
 enum Time {
     minutes,

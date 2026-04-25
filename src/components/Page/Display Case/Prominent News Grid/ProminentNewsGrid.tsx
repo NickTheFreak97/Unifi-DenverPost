@@ -1,11 +1,11 @@
 import React from "react";
 import { LoremIpsum } from "lorem-ipsum";
 
-import Text from "../../../../Common/Text";
-import { useTheme } from "../../../../theme/theme";
+import Text from "../../../Common/Text";
+import { useTheme } from "../../../theme/theme";
 
 import './prominentnewsgrid.css'
-import NewsPlaceholder from '../../../../../assets/Placeholders/273x181.svg'
+import NewsPlaceholder from '@/assets/Placeholders/273x181.svg'
 
 const ProminentNewsGrid: React.FC = () => {
     return (

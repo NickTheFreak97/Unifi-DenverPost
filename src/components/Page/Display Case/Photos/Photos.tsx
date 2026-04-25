@@ -35,7 +35,7 @@ const Photos: React.FC = () => {
     })()
 
     return (
-        <div id="photos-container">
+        <section id="photos-container">
             <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
                 <a href="#">Photos</a>
             </Text>
@@ -69,7 +69,7 @@ const Photos: React.FC = () => {
                     Show More Photos
                 </Text>
             </div>
-        </div>
+        </section>
     )
 }
 

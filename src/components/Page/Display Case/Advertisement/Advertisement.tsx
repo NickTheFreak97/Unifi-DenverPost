@@ -1,9 +1,9 @@
 import React from "react";
 
 import './advertisement.css'
-import '../featured.css'
+import '../Featured/featured.css'
 
-import PlaceholderAds from '../../../../../assets/Placeholders/345x230.svg'
+import PlaceholderAds from '@/assets/Placeholders/345x230.svg'
 
 const Advertisement: React.FC = () => {
 
