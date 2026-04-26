@@ -44,14 +44,17 @@ const App: React.FC = () => {
         <RecommendedFYP />
         <Briefs />
         <Photos />
-        <React.Fragment>
+        <ul id="quick-reads-list">
           {
             rangeOfQuickReads.map((sectionNumber) => {
               return (
-                <QuickReads key={sectionNumber} />
+                <li key={sectionNumber}><QuickReads/></li>
               )
             })
           }
+        </ul>
+        <React.Fragment>
+          
         </React.Fragment>
     </PageShield>
   </React.Fragment>

@@ -46,7 +46,7 @@ const QuickReads: React.FC = () => {
                             return (
                                 <li key={quickRead}>
                                     <article>
-                                        <Text as="span" font={theme.textStyle.secondaryHeadline}>
+                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline}>
                                             { quickRead }
                                         </Text>
                                     </article>

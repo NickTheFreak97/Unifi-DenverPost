@@ -16,3 +16,21 @@ header {
   flex-direction: column;
   width: 100%;
 }
+
+#quick-reads-list {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 32px;
+  list-style-type: none;
+  margin-top: 100px;
+}
+
+#quick-reads-list > li {
+  display: contents;
+}
+
