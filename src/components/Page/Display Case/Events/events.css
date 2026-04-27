@@ -1,0 +1,172 @@
+#denver-events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+    max-width: 80%;
+    width: 100%;
+    background: #eee;
+    margin-top: 100px;
+}
+
+#denver-events-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 20px;
+}
+
+#denver-event-title {
+    color: #3B3B3B;
+    margin-left: 12px;
+}
+
+#denver-events-header figure {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    align-items: center;
+    color: black;
+}
+
+#denver-events-header a {
+    text-decoration: none;
+    justify-self: flex-end;
+}
+
+#denver-events-header-links {
+    display: inline-flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 16px;
+}
+
+
+
+#denver-events-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    list-style-type: none;
+    position: relative;
+    padding-right: 32px;
+}
+
+#denver-events-list li {
+    flex: 1;
+}
+
+
+#denver-events-list li:first-child, #denver-events-list li:last-child {
+    flex-shrink: 1;
+    flex-grow: 0;
+    align-self: center;
+}
+
+
+#denver-events-list li:last-child {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    background-color: #eee;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.denver-events-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    flex: 1;
+}
+
+#denver-events-container a {
+    text-decoration: none;
+    color: black;
+}
+
+.denver-events-card img {
+    max-height: 100px;
+    aspect-ratio: calc(4/3);
+}
+
+.line-limit-1, .line-limit-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line-limit-1 {
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+}
+
+
+.line-limit-2 {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+}
+
+
+
+
+#denver-events-calendar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    width: calc(100% - 40px); 
+    margin: 0px 20px;
+    overflow: hidden;
+    min-width: 800px;
+}
+
+
+#denver-events-calendar li a {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1280px) {
+    #denver-events-container {
+        max-width: 69%;
+        overflow: hidden;
+    }
+}
+
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+    .denver-events-card img {
+        max-height: 150px;
+    }
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 800px) {
+    .denver-events-card img {
+        max-height: 130px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #denver-events-container {
+        max-width: 100%;
+    }   
+
+    .denver-events-card img {
+        max-height: 150px;
+    }
+}

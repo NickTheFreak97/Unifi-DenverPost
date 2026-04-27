@@ -13,6 +13,7 @@ import RecommendedFYP from "./components/Page/Display Case/Recommended/Recommend
 import Briefs from "./components/Page/Display Case/Section Brief/Briefs";
 import Photos from "./components/Page/Display Case/Photos/Photos";
 import QuickReads from "./components/Page/Display Case/Quick Reads/QuickReads";
+import Events from "./components/Page/Display Case/Events/Events";
 
 const App: React.FC = () => {
 
@@ -53,9 +54,7 @@ const App: React.FC = () => {
             })
           }
         </ul>
-        <React.Fragment>
-          
-        </React.Fragment>
+        <Events/>
     </PageShield>
   </React.Fragment>
   )
