@@ -20,7 +20,7 @@ const DenverPostFooter: React.FC = () => {
         <footer>
             <div id="footer-shield">
                 <a href="#">
-                    <img src={DenverPostLogo} alt="the denver post" width="280px" height="auto" />
+                    <img src={DenverPostLogo} alt="the denver post" />
                 </a>
 
                 <nav aria-label="footer links">

@@ -75,13 +75,11 @@ const ProminentNews: React.FC = () => {
 const Divider: React.FC = () => {
     return <hr 
         aria-hidden="true" 
-        tabIndex={-1} 
         style={{
             border: "none",
             borderTop: "0.3px solid var(--separator-color)",
             marginTop: "16px"
         }}
-        inert
     />
 }
 

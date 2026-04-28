@@ -44,7 +44,7 @@ const Events: React.FC = () => {
         return range;
     })()
 
-    return <section id="denver-events-container" aria-labelledby="denver-events-title">
+    return <section id="denver-events-container" aria-labelledby="denver-event-title">
         <div id="denver-events-header">
             <Text as="h2" id="denver-event-title" font={theme.textStyle.prominent} style={{fontWeight: 400}}>
                 Denver Events
