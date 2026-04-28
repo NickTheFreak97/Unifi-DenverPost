@@ -6,7 +6,7 @@ import './briefs.css';
 
 const Briefs: React.FC = () => {
     return (
-        <section className="briefs-container">
+        <section className="briefs-container" aria-label="briefs">
             <SectionBriefColumn />
             <SectionBriefColumn />
             <SectionBriefColumn />

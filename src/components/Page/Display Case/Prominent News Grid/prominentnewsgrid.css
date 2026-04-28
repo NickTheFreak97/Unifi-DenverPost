@@ -21,15 +21,6 @@
     width: 100%;
 }
 
-.prominent-news-grid article a:hover {
-    color: var(--brand-color);
-    cursor: pointer;
-}
-
-.prominent-news-grid article img:hover {
-    cursor: pointer;
-}
-
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
     .prominent-news-grid {
         grid-template-columns: 1fr;

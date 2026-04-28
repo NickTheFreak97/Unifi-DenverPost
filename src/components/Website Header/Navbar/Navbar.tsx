@@ -5,16 +5,20 @@ import { useTheme } from '../../theme/theme'
 import './navbar.css'
 
 const Navbar = () => {
-    return <ul className='arguments-navbar' role="list">
-        <NavigationLink destination='News'/>
-        <NavigationLink destination='Sports'/>
-        <NavigationLink destination='Business'/>
-        <NavigationLink destination='The Know'/>
-        <NavigationLink destination='Outdoors'/>
-        <NavigationLink destination='Opinion'/>
-        <NavigationLink destination='Classifieds'/>
-        <NavigationLink destination='Obituaries'/>
-    </ul>
+    return (
+        <nav>
+            <ul className='arguments-navbar' role="list">
+                <NavigationLink destination='News'/>
+                <NavigationLink destination='Sports'/>
+                <NavigationLink destination='Business'/>
+                <NavigationLink destination='The Know'/>
+                <NavigationLink destination='Outdoors'/>
+                <NavigationLink destination='Opinion'/>
+                <NavigationLink destination='Classifieds'/>
+                <NavigationLink destination='Obituaries'/>
+            </ul>
+        </nav>
+    )
 }
 
 

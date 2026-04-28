@@ -30,7 +30,7 @@ const RecommendedFYP: React.FC = () => {
     })();
 
     return (
-        <section id="fyp">
+        <section id="fyp" aria-label="Recommended for you">
             <Text as="h2" font={theme.textStyle.section}>
                 Recommended For You
             </Text>
@@ -40,9 +40,11 @@ const RecommendedFYP: React.FC = () => {
                         return (
                             <li key={placeholder}>
                                 <article>
-                                    <Text as="a" font={theme.textStyle.header} href="#" className="brand-link">
-                                        {placeholder}
-                                    </Text>
+                                    <h3>
+                                        <Text as="a" font={theme.textStyle.header} href="#" className="brand-link">
+                                            {placeholder}
+                                        </Text>
+                                    </h3>
                                 </article>
                             </li>
                         )

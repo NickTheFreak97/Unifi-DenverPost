@@ -15,6 +15,10 @@
     position: relative;
 }
 
+.featured-headlines-list h3 {
+    display: contents;
+}
+
 .featured-headlines-list li:first-child {
     text-transform: uppercase;
     font-family: 'Noto Sans';

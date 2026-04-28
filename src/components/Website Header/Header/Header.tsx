@@ -62,7 +62,7 @@ const Header: React.FC = () => {
         inert
       />
 
-      <section className={isSticky ? "sticky-header denverpost-header" : "denverpost-header"}>
+      <section className={isSticky ? "sticky-header denverpost-header" : "denverpost-header"} aria-label="Newspaper header">
         <div id="header-wrapper">
           <button 
             aria-haspopup="true"
@@ -76,6 +76,7 @@ const Header: React.FC = () => {
                   fontSize: theme.textStyle.secondaryHeadline.fontSize,
                   fontWeight: theme.textStyle.secondaryHeadline.fontWeight
                 }}
+                aria-hidden="true"
               >
               dehaze
             </span>
@@ -94,7 +95,7 @@ const Header: React.FC = () => {
                 aria-label="The Denver Post"/>
           }
           
-          <nav role="navigation">
+          <nav aria-label="topics">
             <ul>
               {
                 screenWidth >= Breakpoint.laptop && (

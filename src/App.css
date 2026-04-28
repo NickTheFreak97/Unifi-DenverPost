@@ -47,3 +47,15 @@ a.brand-link:hover {
   cursor: pointer;
   color: var(--brand-color);
 }
+
+:is(h1, h2, h3, h4, h5, h6):has(> a:only-child) {
+  font-size: unset;
+  font-weight: unset;
+  font-family: unset;
+  line-height: unset;
+}
+
+
+h2 a {
+  line-height: 1.2;
+}

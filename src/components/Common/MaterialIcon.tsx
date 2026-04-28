@@ -18,6 +18,7 @@ const MaterialIcon: React.FC<MaterialIconProps> = (props) => {
                 fontSize: theme.textStyle.title.fontSize,
                 fontWeight: theme.textStyle.body.fontWeight
             }}
+            aria-hidden="true"
         >
             { iconName }
         </span>

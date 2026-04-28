@@ -8,7 +8,7 @@ const Trending: React.FC = () => {
 
     return (
         <React.Fragment>
-            <ul role="list" id="trending-list">
+            <ul id="trending-list" role="navigation">
                 <li style={{
                     fontFamily: theme.textStyle.body.fontFamily,
                     fontSize: theme.textStyle.body.fontSize

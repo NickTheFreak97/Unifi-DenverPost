@@ -35,7 +35,7 @@ const Photos: React.FC = () => {
     })()
 
     return (
-        <section id="photos-container">
+        <section id="photos-container" aria-label="photos">
             <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
                 <a href="#" className="brand-link">Photos</a>
             </Text>
@@ -51,11 +51,11 @@ const Photos: React.FC = () => {
                                         <div className="photos-img-wrapper" style={{width: "90px"}}>
                                             <img src={FeaturedPlaceholder} alt="headline alt" width="90px" height="auto" />
                                         </div>
-                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">
-                                            <h2>
+                                        <h4>
+                                            <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">
                                                 { `PHOTOS: ${headline}` }
-                                            </h2>
-                                        </Text>
+                                            </Text>
+                                        </h4>
                                     </article>
                                 </li>
                             )
@@ -83,10 +83,13 @@ const FeaturedPhoto: React.FC = () => {
                 <img src={FeaturedPlaceholder} alt="An alt placeholder for the featured story of Photo section" width="100%" height="auto" />
             </div>
 
-            <Text as="a" href="#" font={theme.textStyle.title} className="brand-link">
-                <h2>{ `PHOTOS: ${lorem.generateSentences(1)}` } </h2>
-            </Text>
-            <Text as="span" font={theme.textStyle.body}>
+            <h3 style={{marginBottom: "16px"}}>
+                <Text as="a" href="#" font={theme.textStyle.title} className="brand-link" style={{lineHeight: 1.2}}>
+                    { `PHOTOS: ${lorem.generateSentences(1)}` }
+                </Text>
+            </h3>
+
+            <Text as="p" font={theme.textStyle.body}>
                 { lorem.generateSentences(1) }
             </Text>
         </article>

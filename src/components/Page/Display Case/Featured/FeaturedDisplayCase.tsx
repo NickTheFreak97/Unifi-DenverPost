@@ -26,7 +26,7 @@ const lorem = new LoremIpsum({
 
 const FeaturedDisplayCase: React.FC = () => {
     return (
-        <section className="featured-display-wrapper">
+        <section className="featured-display-wrapper" aria-label="featured news">
             <div className="featured-display-main-flow">
                 <ProminentNews />
                 <Divider />
@@ -49,8 +49,8 @@ const ProminentNews: React.FC = () => {
     return (
         <article className="featured-prominent-news-wrapper">
             <div className="featured-prominent-news-headline-wrapper">
-                <Text as="a" font={theme.textStyle.title} style={{ lineHeight: 1 }} href="#" className="brand-link">
-                    {lorem.generateSentences(1)}
+                <Text as="h2" font={theme.textStyle.title} style={{ lineHeight: 1 }}>
+                    <a href="#" className="brand-link">{lorem.generateSentences(1)}</a>
                 </Text>
 
                 {
@@ -58,7 +58,7 @@ const ProminentNews: React.FC = () => {
                         articleImage
                 }
 
-                <Text as="h1" font={theme.textStyle.body} style={{ fontWeight: 300 }}>
+                <Text as="p" font={theme.textStyle.body} style={{ fontWeight: 300 }}>
                     {lorem.generateSentences(1)}
                 </Text>
             </div>
@@ -73,13 +73,12 @@ const ProminentNews: React.FC = () => {
 
 
 const Divider: React.FC = () => {
-    return <div 
+    return <hr 
         aria-hidden="true" 
         tabIndex={-1} 
         style={{
-            width: "100%",
-            height: "1px",
-            backgroundColor: "var(--separator-color)",
+            border: "none",
+            borderTop: "0.3px solid var(--separator-color)",
             marginTop: "16px"
         }}
         inert

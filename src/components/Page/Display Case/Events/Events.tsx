@@ -61,6 +61,7 @@ const Events: React.FC = () => {
                         style={{
                             fontSize: theme.textStyle.section.fontSize
                         }}
+                        aria-label="go back"
                     >
                         chevron_backward
                     </span>
@@ -82,6 +83,7 @@ const Events: React.FC = () => {
                     <span 
                         className="material-symbols-outlined"
                         style={{fontSize: theme.textStyle.section.fontSize}}
+                        aria-label="go forward"
                     >
                         chevron_forward
                     </span>
@@ -102,39 +104,37 @@ const HeaderLinks: React.FC = () => {
         <ul id="denver-events-header-links">
             <li>
                 <a href="#">
-                    <figure>
-                        <span 
-                            className="material-symbols-outlined"
-                            style={{
-                                fontSize: theme.textStyle.caption.fontSize,
-                                fontWeight: theme.textStyle.caption.fontWeight
-                            }}
-                        >
-                            calendar_month
-                        </span>
-                        <Text font={theme.textStyle.caption}>
-                            See All Events
-                        </Text>
-                    </figure>
+                    <span 
+                        className="material-symbols-outlined"
+                        style={{
+                            fontSize: theme.textStyle.caption.fontSize,
+                            fontWeight: theme.textStyle.caption.fontWeight
+                        }}
+                        aria-hidden="true"
+                    >
+                        calendar_month
+                    </span>
+                    <Text font={theme.textStyle.caption} as="span">
+                        See All Events
+                    </Text>
                 </a>
             </li>
 
             <li>
                 <a href="#">
-                    <figure>
-                        <span 
-                            className="material-symbols-outlined"
-                            style={{
-                                fontSize: theme.textStyle.section.fontSize,
-                                fontWeight: 600
-                            }}
-                        >
-                            add
-                        </span>
-                        <Text font={theme.textStyle.caption}>
-                            Add Your Event
-                        </Text>
-                    </figure>
+                    <span 
+                        className="material-symbols-outlined"
+                        style={{
+                            fontSize: theme.textStyle.section.fontSize,
+                            fontWeight: 600
+                        }}
+                        aria-hidden="true"
+                    >
+                        add
+                    </span>
+                    <Text font={theme.textStyle.caption} as="span">
+                        Add Your Event
+                    </Text>
                 </a>
             </li>
         </ul>
@@ -143,26 +143,34 @@ const HeaderLinks: React.FC = () => {
 
 const EventCard: React.FC = () => {
     const theme = useTheme();
+    const title = lorem.generateSentences(1)
 
-    return <figure className="denver-events-card">
+     return <div className="denver-events-card" aria-label={title}>
         <img src={Placeholder} alt="placeholder for event" width="auto" height="auto" />
         <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="line-limit-2">
-            { lorem.generateSentences(1) }
+            { title }
         </Text>
         <Text as="a" href="#" font={theme.textStyle.caption} className="line-limit-1">
             { lorem.generateSentences(1) }
         </Text>
-    </figure>
+    </div>
 }
 
 
 class Day {
     number: number
     dayOfWeek: string
+    timestamp: string
 
-    constructor(number: number, dayOfWeek: string) {
-        this.number = number
-        this.dayOfWeek = dayOfWeek
+    constructor(date: Date) {
+        this.number = date.getDate()
+        this.dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'short' })
+        
+        this.timestamp = [
+            date.getFullYear(),
+            String(date.getMonth() + 1).padStart(2, '0'),
+            String(date.getDate()).padStart(2, '0')
+        ].join('-');
     }
 
     getNumber(): number {
@@ -172,6 +180,10 @@ class Day {
     getDayOfWeek(): string {
         return this.dayOfWeek.toUpperCase();
     }
+
+    getTimestamp(): string {
+        return this.timestamp
+    }
 }
 
 const Calendar: React.FC = () => {
@@ -180,10 +192,7 @@ const Calendar: React.FC = () => {
         const date = new Date();
         date.setDate(date.getDate() + dayOffset);
 
-        return new Day(
-            /*number:*/ date.getDate(),
-            /*dayOfWeek:*/ date.toLocaleDateString('en-US', { weekday: 'short' })
-        );
+        return new Day(/*date:*/ date);
     });
 
 
@@ -198,6 +207,7 @@ const Calendar: React.FC = () => {
                             fontWeight: 300,
                             color: "#3b3b3b"
                         }}
+                        aria-hidden="true"
                     >
                         calendar_month
                     </span>
@@ -208,14 +218,16 @@ const Calendar: React.FC = () => {
                 days.map(day => {
                     return (
                         <li key={day.getNumber()}>
-                            <a href="#">
-                                <Text as="span" font={theme.textStyle.callout}>
-                                    { day.getNumber() }
-                                </Text>
-                                <Text as="span" font={theme.textStyle.callout}>
-                                    { day.getDayOfWeek() }
-                                </Text>
-                            </a>
+                            <time dateTime={day.getTimestamp()}>
+                                <a href="#">
+                                    <Text as="span" font={theme.textStyle.callout}>
+                                        { day.getNumber() }
+                                    </Text>
+                                    <Text as="span" font={theme.textStyle.callout}>
+                                        { day.getDayOfWeek() }
+                                    </Text>
+                                </a>
+                            </time>
                         </li>
                     )
                 })

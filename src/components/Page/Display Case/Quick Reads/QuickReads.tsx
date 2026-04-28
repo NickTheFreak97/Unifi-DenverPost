@@ -32,10 +32,12 @@ const QuickReads: React.FC = () => {
         return quickReads
     })()
 
+    const quickReadsTitle = lorem.generateWords(Math.floor(Math.random() % 2 + 1))
+
     return (
-        <section className="quick-reads-container">
+        <section className="quick-reads-container" aria-label={`${quickReadsTitle} quick reads`}>
             <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
-                <a href="#" className="brand-link">{ lorem.generateWords(Math.floor(Math.random() % 2 + 1)) }</a>
+                <a href="#" className="brand-link">{ quickReadsTitle }</a>
             </Text>
 
             <div className="quick-reads-list-container">
@@ -46,9 +48,11 @@ const QuickReads: React.FC = () => {
                             return (
                                 <li key={quickRead}>
                                     <article>
-                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">
-                                            { quickRead }
-                                        </Text>
+                                        <h4>
+                                            <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">
+                                                { quickRead }
+                                            </Text>
+                                        </h4>
                                     </article>
                                 </li>
                             )
@@ -68,13 +72,14 @@ const FeaturedQuickRead: React.FC = () => {
         <article className="quick-reads-featured-article">
             <img src={Placeholder} alt="A placeholder for a prominent news in the quick reads" width="100%" height="auto" />
             <div className="quick-reads-news-body-wrapper">
-                <Text as="a" href="#" font={theme.textStyle.subtitle} className="brand-link">
-                    <h2>
-                        { lorem.generateSentences(1) }
-                    </h2>
-                </Text>
+                <h3>
+                    <Text as="a" href="#" font={theme.textStyle.title} className="brand-link">
+                            { lorem.generateSentences(1) }
+                    </Text>
+                </h3>
+
                 <div className="quick-reads-container">
-                    <Text as="span" font={theme.textStyle.body}>
+                    <Text as="p" font={theme.textStyle.body}>
                         { lorem.generateSentences(1) }
                     </Text>
                 </div>

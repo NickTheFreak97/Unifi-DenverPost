@@ -12,23 +12,23 @@ const Subheader: React.FC = () => {
     const theme = useTheme();
 
     return (
-        <section className="denverpost-subheader">
-            <hgroup id="denverpost-weather">
+        <section className="denverpost-subheader" aria-label="Today's weather">
+            <div id="denverpost-weather">
                 <Text as='span' font={theme.textStyle.header}>
                     49°F
                 </Text>
                 <button className="unstyled-button tappable-icon-btn">
                     <MaterialIcon iconName="thunderstorm" aria-label="thunderstorm"/>
                 </button>
-            </hgroup>
-            <hgroup id="denverpost-today">
-                <Text as='h2' font={theme.textStyle.header}>
+            </div>
+            <div id="denverpost-today">
+                <Text as='span' font={theme.textStyle.header}>
                     Saturday, April 11th 2026
                 </Text>
-                <Text as='span' font={theme.textStyle.caption} className="denverpost-today-text-ul">
+                <Text as='p' font={theme.textStyle.caption} className="denverpost-today-text-ul">
                     Digital Replica Edition
                 </Text>
-            </hgroup>
+            </div>
             <img src={deverPostLogo} alt="The Denver Post" className="subheader-denverpost-logo"/>
         </section>
     )

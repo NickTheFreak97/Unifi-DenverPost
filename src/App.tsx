@@ -30,6 +30,7 @@ const App: React.FC = () => {
 
   return (
   <React.Fragment>
+    <h1 className="visually-hidden">The Denver Post</h1>
     <header>
       <Header />
       { screenWidth >= Breakpoint.laptop && 

@@ -34,16 +34,16 @@ const SectionBriefColumn: React.FC = () => {
         return headlines
     })();
 
+    const briefTitle = lorem.generateWords(Math.floor(Math.random() * 2) + 1)
+
     return (
-        <section style={{width: "100%"}}>
+        <section style={{width: "100%"}} aria-label={`${briefTitle} brief`}>
             <Text as="h2" font={theme.textStyle.section} className="brief-column-title">
-                <a href="#" className="brand-link">{ lorem.generateWords(Math.floor(Math.random() * 2) + 1) }</a>
+                <a href="#" className="brand-link">{ briefTitle }</a>
             </Text>
             <ul className="brief-column">
                 <li>
-                    <article>
-                        <SectionTopStory />
-                    </article>
+                    <SectionTopStory />
                 </li>
 
                 {
@@ -51,9 +51,11 @@ const SectionBriefColumn: React.FC = () => {
                         return (
                             <li key={headline}>
                                 <article>
-                                    <Text as="a" font={theme.textStyle.header} href="#" className="brand-link">
-                                        { headline }
-                                    </Text>
+                                    <h4>
+                                        <Text as="a" font={theme.textStyle.header} href="#" className="brand-link">
+                                            { headline }
+                                        </Text>
+                                    </h4>
                                 </article>
                             </li>
                         )
@@ -92,12 +94,14 @@ const SectionTopStory: React.FC = () => {
                 <img src={randomImage} alt="A placeholder for the top story of this section"/>
             </div>
 
-            <Text as="a" href="#" className="brand-link" font={theme.textStyle.prominent}>
-                <h2>{ lorem.generateSentences(1) }</h2>
-            </Text>
+            <h3>
+                <Text as="a" href="#" className="brand-link" font={theme.textStyle.title} style={{lineHeight: "1.15"}}>
+                    { lorem.generateSentences(1) }
+                </Text>
+            </h3>
 
 
-            <Text as="h2" font={theme.textStyle.body} style={{fontWeight: 300}}>
+            <Text as="p" font={theme.textStyle.body} style={{fontWeight: 300}}>
                 { lorem.generateSentences(1) }
             </Text>
         </article>
