@@ -30,7 +30,6 @@ const HeaderAction: React.FC<AnyChildren> = ({ children }) => {
         <HeaderButton 
             $basecolor={theme.color.primary} 
             $hovercolor={theme.color.primaryActive}
-            role="button"
             tabIndex={0}
         >
             {children}

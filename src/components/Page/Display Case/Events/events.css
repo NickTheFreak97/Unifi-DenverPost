@@ -101,7 +101,7 @@
 .line-limit-1, .line-limit-2 {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    overflow: hidden;
+    overflow: clip;
     text-overflow: ellipsis;
 }
 
@@ -128,7 +128,7 @@
     gap: 0;
     width: calc(100% - 40px); 
     margin: 0px 28px;
-    overflow: hidden;
+    overflow: clip;
     min-width: 800px;
 }
 
@@ -144,7 +144,7 @@
 @media screen and (max-width: 1280px) {
     #denver-events-container {
         max-width: 69%;
-        overflow: hidden;
+        overflow: clip;
     }
 }
 
@@ -168,6 +168,6 @@
     }   
 
     .denver-events-card img {
-        max-height: 150px;
+        height: 150px;
     }
 }

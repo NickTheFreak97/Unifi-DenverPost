@@ -14,6 +14,7 @@ import Briefs from "./components/Page/Display Case/Section Brief/Briefs";
 import Photos from "./components/Page/Display Case/Photos/Photos";
 import QuickReads from "./components/Page/Display Case/Quick Reads/QuickReads";
 import Events from "./components/Page/Display Case/Events/Events";
+import DenverPostFooter from "./components/Footer/DenverPostFooter";
 
 const App: React.FC = () => {
 
@@ -57,6 +58,7 @@ const App: React.FC = () => {
         </ul>
         <Events/>
     </PageShield>
+    <DenverPostFooter />
   </React.Fragment>
   )
 }

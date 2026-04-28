@@ -95,7 +95,7 @@ const Header: React.FC = () => {
                 aria-label="The Denver Post"/>
           }
           
-          <nav aria-label="topics">
+          <nav aria-label="actions">
             <ul>
               {
                 screenWidth >= Breakpoint.laptop && (
