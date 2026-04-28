@@ -38,11 +38,6 @@
     flex: 1;
 }
 
-.featured-prominent-news-headline-wrapper a:hover {
-    cursor: pointer;
-    color: var(--brand-color);
-}
-
 .featured-prominent-news-headline-wrapper img:hover {
     cursor: pointer;
 }

@@ -47,17 +47,6 @@
 }
 
 
-#photos-wrapper a {
-    text-decoration: none;
-    color: black;
-}
-
-
-#photos-wrapper a:hover {
-    text-decoration: none;
-    color: var(--brand-color);
-}
-
 #photos-wrapper a h2 {
     font-size: inherit;
     font-weight: inherit;

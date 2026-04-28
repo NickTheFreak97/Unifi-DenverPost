@@ -33,7 +33,7 @@ const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
             fontFamily: theme.textStyle.body.fontFamily,
             fontSize: theme.textStyle.body.fontSize,
             fontWeight: 300
-        }}><a href="#">{props.destination}</a></li>
+        }}><a href="#" className="brand-link">{props.destination}</a></li>
     )
 }
 

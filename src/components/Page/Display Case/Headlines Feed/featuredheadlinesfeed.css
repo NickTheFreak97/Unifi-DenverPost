@@ -67,7 +67,3 @@
 .featured-headlines-list li a {
     cursor: pointer;
 }
-
-.featured-headlines-list li a:hover {
-    color: var(--brand-color);
-}

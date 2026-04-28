@@ -131,7 +131,7 @@ const FeaturedHeadlinesFeed: React.FC = () => {
                     return <li key={headline.getTitle()}>
                         {
                             <article>
-                                <Text as="a" font={theme.textStyle.secondaryHeadline}>
+                                <Text as="a" font={theme.textStyle.secondaryHeadline} href="#" className="brand-link">
                                     { headline.getTitle() }
                                 </Text>
                                 <ElapsedTime time={headline.getTime()} amount={headline.getAmountOfTime()}/>

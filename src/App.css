@@ -34,3 +34,16 @@ header {
   display: contents;
 }
 
+section > a.brand-link {
+  display: block;
+}
+
+a.brand-link {
+  color: black;
+  text-decoration: none;
+}
+
+a.brand-link:hover {
+  cursor: pointer;
+  color: var(--brand-color);
+}

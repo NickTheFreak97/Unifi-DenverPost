@@ -11,20 +11,26 @@
     height: auto;
 }
 
+
+
 .brief-column-title a {
     text-transform: uppercase;
     position: relative;
-    color: black;
-    text-decoration: none;
 }
 
+.top-story-image-wrapper + a h2 {
+    line-height: 1.15;
+}
+
+.top-story-image-wrapper + a {
+    display: block;
+}
 
 .brief-column-title {
     position: relative;
     width: 100%;
     margin-bottom: 16px;
 }
-
 
 .brief-column-title::after {
     content: "";

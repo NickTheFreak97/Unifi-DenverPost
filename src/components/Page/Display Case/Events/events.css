@@ -16,6 +16,7 @@
     justify-content: space-between;
     width: 100%;
     padding: 0px 20px;
+    padding-right: 32px;
 }
 
 #denver-event-title {
@@ -126,7 +127,7 @@
     justify-content: space-between;
     gap: 0;
     width: calc(100% - 40px); 
-    margin: 0px 20px;
+    margin: 0px 28px;
     overflow: hidden;
     min-width: 800px;
 }

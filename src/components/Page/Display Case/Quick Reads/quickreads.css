@@ -25,15 +25,6 @@
     text-decoration: none;
 }
 
-.quick-reads-list-container a:hover {
-    color: var(--brand-color);
-}
-
-
-.quick-reads-featured-article:hover a {
-    color: var(--brand-color);
-}
-
 .quick-reads-news-body-wrapper {
     display: flex;
     flex-direction: column;

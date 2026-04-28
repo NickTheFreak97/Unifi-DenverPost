@@ -28,8 +28,3 @@ ul#trending-list li:first-child {
     color: var(--brand-color);
     font-family: 'Noto Sans';
 }
-
-
-ul#trending-list li a:hover {
-    color: var(--brand-color);
-}

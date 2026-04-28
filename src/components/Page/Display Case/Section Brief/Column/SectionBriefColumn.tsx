@@ -37,9 +37,7 @@ const SectionBriefColumn: React.FC = () => {
     return (
         <section style={{width: "100%"}}>
             <Text as="h2" font={theme.textStyle.section} className="brief-column-title">
-                <a href="#">
-                    { lorem.generateWords(Math.floor(Math.random() * 2) + 1) }
-                </a>
+                <a href="#" className="brand-link">{ lorem.generateWords(Math.floor(Math.random() * 2) + 1) }</a>
             </Text>
             <ul className="brief-column">
                 <li>
@@ -53,7 +51,7 @@ const SectionBriefColumn: React.FC = () => {
                         return (
                             <li key={headline}>
                                 <article>
-                                    <Text as="a" font={theme.textStyle.header}>
+                                    <Text as="a" font={theme.textStyle.header} href="#" className="brand-link">
                                         { headline }
                                     </Text>
                                 </article>
@@ -94,8 +92,8 @@ const SectionTopStory: React.FC = () => {
                 <img src={randomImage} alt="A placeholder for the top story of this section"/>
             </div>
 
-            <Text as="h2" font={theme.textStyle.prominent}>
-                { lorem.generateSentences(1) }
+            <Text as="a" href="#" className="brand-link" font={theme.textStyle.prominent}>
+                <h2>{ lorem.generateSentences(1) }</h2>
             </Text>
 
 

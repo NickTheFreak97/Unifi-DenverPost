@@ -40,7 +40,7 @@ const RecommendedFYP: React.FC = () => {
                         return (
                             <li key={placeholder}>
                                 <article>
-                                    <Text as="a" font={theme.textStyle.header}>
+                                    <Text as="a" font={theme.textStyle.header} href="#" className="brand-link">
                                         {placeholder}
                                     </Text>
                                 </article>

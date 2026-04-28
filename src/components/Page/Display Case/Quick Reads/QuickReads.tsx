@@ -35,7 +35,7 @@ const QuickReads: React.FC = () => {
     return (
         <section className="quick-reads-container">
             <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
-                <a href="#">{ lorem.generateWords(Math.floor(Math.random() % 2 + 1)) }</a>
+                <a href="#" className="brand-link">{ lorem.generateWords(Math.floor(Math.random() % 2 + 1)) }</a>
             </Text>
 
             <div className="quick-reads-list-container">
@@ -46,7 +46,7 @@ const QuickReads: React.FC = () => {
                             return (
                                 <li key={quickRead}>
                                     <article>
-                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline}>
+                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">
                                             { quickRead }
                                         </Text>
                                     </article>
@@ -68,7 +68,7 @@ const FeaturedQuickRead: React.FC = () => {
         <article className="quick-reads-featured-article">
             <img src={Placeholder} alt="A placeholder for a prominent news in the quick reads" width="100%" height="auto" />
             <div className="quick-reads-news-body-wrapper">
-                <Text as="a" href="#" font={theme.textStyle.subtitle}>
+                <Text as="a" href="#" font={theme.textStyle.subtitle} className="brand-link">
                     <h2>
                         { lorem.generateSentences(1) }
                     </h2>

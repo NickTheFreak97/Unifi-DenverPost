@@ -37,7 +37,7 @@ const Photos: React.FC = () => {
     return (
         <section id="photos-container">
             <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
-                <a href="#">Photos</a>
+                <a href="#" className="brand-link">Photos</a>
             </Text>
 
             <div id="photos-wrapper">
@@ -51,7 +51,7 @@ const Photos: React.FC = () => {
                                         <div className="photos-img-wrapper" style={{width: "90px"}}>
                                             <img src={FeaturedPlaceholder} alt="headline alt" width="90px" height="auto" />
                                         </div>
-                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline}>
+                                        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">
                                             <h2>
                                                 { `PHOTOS: ${headline}` }
                                             </h2>
@@ -83,7 +83,7 @@ const FeaturedPhoto: React.FC = () => {
                 <img src={FeaturedPlaceholder} alt="An alt placeholder for the featured story of Photo section" width="100%" height="auto" />
             </div>
 
-            <Text as="a" href="#" font={theme.textStyle.title}>
+            <Text as="a" href="#" font={theme.textStyle.title} className="brand-link">
                 <h2>{ `PHOTOS: ${lorem.generateSentences(1)}` } </h2>
             </Text>
             <Text as="span" font={theme.textStyle.body}>

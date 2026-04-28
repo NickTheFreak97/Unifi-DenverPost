@@ -71,9 +71,7 @@ const Events: React.FC = () => {
                 eventKeys.map( eventKey => {
                     return (
                         <li key={eventKey}>
-                            <a href="#">
-                                <EventCard/>
-                            </a>
+                            <EventCard/>
                         </li>
                     )
                 })
