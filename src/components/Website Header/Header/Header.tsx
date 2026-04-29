@@ -69,6 +69,7 @@ const Header: React.FC = () => {
             aria-expanded={false}
             className="unstyled-button tappable-icon-btn"
             tabIndex={0}
+            aria-label="Open all sections"
           >
             <span 
                 className="material-symbols-outlined"
@@ -100,8 +101,8 @@ const Header: React.FC = () => {
               {
                 screenWidth >= Breakpoint.laptop && (
                   <li>
-                    <HeaderAction>
-                      <Text font={theme.textStyle.secondaryHeadline}>
+                    <HeaderAction ariaLabel="Subscribe to newsletter">
+                      <Text font={theme.textStyle.secondaryHeadline} aria-hidden={true}>
                         Subscribe
                       </Text>
                     </HeaderAction>
@@ -110,8 +111,8 @@ const Header: React.FC = () => {
               {
                 screenWidth >= Breakpoint.laptop && (
                 <li>
-                  <HeaderAction>
-                    <Text font={theme.textStyle.secondaryHeadline}>
+                  <HeaderAction ariaLabel="Log in to denver post">
+                    <Text font={theme.textStyle.secondaryHeadline} aria-hidden={true}>
                       Log in
                     </Text>
                   </HeaderAction>
@@ -122,12 +123,11 @@ const Header: React.FC = () => {
                   style={{padding: "0px 12px",}}
                   className="unstyled-button tappable-icon-btn"
                   aria-label="Search"
-                  role="button"
                   aria-haspopup="true"
                   aria-expanded={false}
                   tabIndex={0}
                 >
-                  <span className="material-symbols-outlined">search</span>
+                  <span className="material-symbols-outlined" aria-hidden="true">search</span>
                 </button>
               </li>
             </ul>

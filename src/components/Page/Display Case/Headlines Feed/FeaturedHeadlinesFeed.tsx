@@ -147,8 +147,8 @@ const FeaturedHeadlinesFeed: React.FC = () => {
                 <Text as="span" font={theme.textStyle.subtitle} style={{fontWeight: 700}}>
                     Sign up for Newsletters and Alerts
                 </Text>
-                <HeaderAction>
-                    <Text font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}}>
+                <HeaderAction ariaLabel="Sign up to youd denver post account">
+                    <Text font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}} aria-hidden="true">
                       Sign Up
                     </Text>
                 </HeaderAction>

@@ -23,7 +23,11 @@ const HeaderButton = styled.button<{ $basecolor: string, $hovercolor: string }>`
     }
 `;
 
-const HeaderAction: React.FC<AnyChildren> = ({ children }) => {
+interface HeaderButtonProps extends AnyChildren {
+    ariaLabel?: string
+}
+
+const HeaderAction: React.FC<Partial<HeaderButtonProps>> =  (props) => {
     const theme = useTheme();
 
     return (
@@ -31,8 +35,9 @@ const HeaderAction: React.FC<AnyChildren> = ({ children }) => {
             $basecolor={theme.color.primary} 
             $hovercolor={theme.color.primaryActive}
             tabIndex={0}
+            aria-label={props.ariaLabel}
         >
-            {children}
+            {props.children}
         </HeaderButton>
     );
 }
