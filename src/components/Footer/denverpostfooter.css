@@ -28,6 +28,7 @@ footer {
 }
 
 .footer-members-links {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -74,7 +75,7 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
-        #footer-shield nav {
+    #footer-shield nav {
         display: grid;
         grid-auto-flow: column;
         align-items: start;
@@ -135,5 +136,52 @@ footer {
 
 
 @media screen and (max-width: 640px) {
-    
+    #footer-shield nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #footer-shield nav ul::before {
+        width: 100%;
+    }
+
+    #footer-shield img {
+        max-width: 100%;
+    }
+
+
+    #footer-shield nav ul li:not(:first-child) {
+        display: none;
+    }
+
+    #footer-shield nav ul li:not(:has(> button:first-child))::after {
+        font-size: 11px;
+        content: "▼";
+        position: absolute;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #3B3B3B;
+    }
+
+    #footer-shield nav ul {
+        flex: unset;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .footer-members-links {
+        flex: unset;
+        width: 100%;
+        gap: 0;
+    }
+
+    #footer-shield {
+        padding: 20px 0px;
+    }
+
+    #footer-shield nav ul li:first-child button {
+        max-width: 100%;
+    }
 }
