@@ -17,6 +17,11 @@ header {
   width: 100%;
 }
 
+hr {
+  border: none;
+  border-top: 0.3px solid var(--separator-color);
+}
+
 #quick-reads-list {
   margin-top: 100px;
   display: flex;

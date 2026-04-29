@@ -45,9 +45,11 @@ const DenverPostFooter: React.FC = () => {
                         </ul>
                     </div>
                 </nav>
-
-
             </div>
+
+            <hr />
+
+            <TechnicalLinks />
         </footer>
     )
 }
@@ -76,4 +78,31 @@ const FooterColumn: React.FC<FooterColumnProps> = (props) => {
     )
 }
 
-export default DenverPostFooter
+
+const TechnicalLinks: React.FC = () => {
+    const theme = useTheme();
+
+    return (
+        <nav aria-label="technical links">
+            <ul id="technical-links">
+                {
+                    Array.from({length: 10}).map((_, index) => {
+                        return <li key={index}>
+                            <a href="#">
+                                <Text as="span" font={theme.textStyle.caption}>
+                                    { lorem.generateSentences(1) }
+                                </Text>
+                            </a>
+                        </li>
+                    })
+                }
+            </ul>
+
+            <Text as="p" className="copyright-notice" font={theme.textStyle.caption}>
+                Copyright 2026 The Denver Post. All rights reserved. The use of any content on this website for the purpose of training artificial intelligence systems, algorithms, machine learning models, text and data mining, or similar use is strictly prohibited without explicit written consent.
+            </Text>
+        </nav>
+    )
+}
+
+export default DenverPostFooter;

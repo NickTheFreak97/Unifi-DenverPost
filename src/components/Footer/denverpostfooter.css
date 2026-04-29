@@ -5,6 +5,7 @@ footer {
     margin-top: 100px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px 0px inset;
     border-top: 1px solid rgba(0,0,0,0.3);
+    padding-bottom: 100px;
 }
 
 #footer-shield {
@@ -57,7 +58,6 @@ footer {
 }
 
 
-
 #footer-shield nav ul::before {
     position: absolute;
     content: "";
@@ -73,6 +73,13 @@ footer {
     text-decoration: none;
     color: black;
 }
+
+.copyright-notice {
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+    color: #3B3B3B;
+} 
 
 @media screen and (max-width: 1024px) {
     #footer-shield nav {
@@ -185,3 +192,50 @@ footer {
         max-width: 100%;
     }
 }
+
+nav:has(> #technical-links:first-child) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0px 16px;
+}
+
+#technical-links {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 16px;
+    color: #3B3B3B;
+    list-style-type: none;
+    margin: 16px 0px;
+}
+
+#technical-links a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+    #technical-links {
+        flex-direction: column;
+        row-gap: 3px;
+        justify-content: flex-start;
+        margin: 32px 0px;
+        margin-right: auto;
+    }
+
+    #technical-links li a span {
+        font-size: 16px !important;
+    }
+}
+
+
+
+@media screen and (max-width: 640px) {
+    #technical-links {
+        row-gap: 16px;
+    }
+}
+
