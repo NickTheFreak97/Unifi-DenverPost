@@ -35,7 +35,7 @@ const DenverPostFooter: React.FC = () => {
                     <div className="footer-members-links">
                         <FooterColumn linksCount={4} />
                         <ul>
-                            <li>
+                            <li aria-label="Subscribe to newsletter">
                                 <HeaderAction>
                                     <Text font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}}>
                                         Subscribe now

@@ -46,7 +46,7 @@ const QuickReads: React.FC = () => {
                     {
                         quickReads.map(quickRead => {
                             return (
-                                <li key={quickRead}>
+                                <li key={quickRead} role="listitem">
                                     <article>
                                         <h4>
                                             <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="brand-link">

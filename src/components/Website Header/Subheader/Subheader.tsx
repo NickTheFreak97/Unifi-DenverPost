@@ -17,7 +17,7 @@ const Subheader: React.FC = () => {
                 <Text as='span' font={theme.textStyle.header}>
                     49°F
                 </Text>
-                <button className="unstyled-button tappable-icon-btn">
+                <button className="unstyled-button tappable-icon-btn" aria-label="Current weather: 49°F, stormy. Open forecast">
                     <MaterialIcon iconName="thunderstorm" aria-label="thunderstorm"/>
                 </button>
             </div>

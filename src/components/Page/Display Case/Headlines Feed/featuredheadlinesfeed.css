@@ -15,8 +15,14 @@
     position: relative;
 }
 
-.featured-headlines-list h3 {
+.featured-headlines-list h3, .featured-headlines-list h4 {
     display: contents;
+}
+
+.featured-headlines-list h3 {
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: 'Noto Sans';
 }
 
 .featured-headlines-list li:first-child {

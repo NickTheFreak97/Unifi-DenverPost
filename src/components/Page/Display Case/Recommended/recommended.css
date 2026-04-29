@@ -30,7 +30,7 @@
     left: 0;
 }
 
-#fyp ul {
+#fyp ol {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -41,7 +41,7 @@
 }
 
 
-#fyp ul li {
+#fyp ol li {
     margin-left: calc(2 * var(--bullet-radius) + 16px);
     position: relative;
     min-height: calc(2 * var(--bullet-radius));
@@ -51,11 +51,11 @@
 }
 
 
-#fyp ul li:hover a {
+#fyp ol li:hover a {
     color: var(--brand-color);
 }
 
-#fyp ul li::before {
+#fyp ol li::before {
     content: counter(item);
     width: calc(2 * var(--bullet-radius));
     height: calc(2 * var(--bullet-radius));
@@ -97,7 +97,7 @@
 
 
 @media screen and (max-width: 640px) {
-    #fyp ul {
+    #fyp ol {
         grid-template-columns: 1fr;
     }
 }

@@ -34,7 +34,7 @@ const RecommendedFYP: React.FC = () => {
             <Text as="h2" font={theme.textStyle.section}>
                 Recommended For You
             </Text>
-            <ul>
+            <ol aria-label="Recommended articles">
                 {
                     placeholders.map((placeholder) => {
                         return (
@@ -50,7 +50,7 @@ const RecommendedFYP: React.FC = () => {
                         )
                     })
                 }
-            </ul>
+            </ol>
         </section>
     )
 }

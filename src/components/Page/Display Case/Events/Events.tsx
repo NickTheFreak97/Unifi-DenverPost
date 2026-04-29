@@ -101,43 +101,45 @@ const HeaderLinks: React.FC = () => {
     const theme = useTheme();
 
     return (
-        <ul id="denver-events-header-links">
-            <li>
-                <a href="#">
-                    <span 
-                        className="material-symbols-outlined"
-                        style={{
-                            fontSize: theme.textStyle.caption.fontSize,
-                            fontWeight: theme.textStyle.caption.fontWeight
-                        }}
-                        aria-hidden="true"
-                    >
-                        calendar_month
-                    </span>
-                    <Text font={theme.textStyle.caption} as="span">
-                        See All Events
-                    </Text>
-                </a>
-            </li>
+        <nav>
+            <ul id="denver-events-header-links">
+                <li>
+                    <a href="#">
+                        <span 
+                            className="material-symbols-outlined"
+                            style={{
+                                fontSize: theme.textStyle.caption.fontSize,
+                                fontWeight: theme.textStyle.caption.fontWeight
+                            }}
+                            aria-hidden="true"
+                        >
+                            calendar_month
+                        </span>
+                        <Text font={theme.textStyle.caption} as="span">
+                            See All Events
+                        </Text>
+                    </a>
+                </li>
 
-            <li>
-                <a href="#">
-                    <span 
-                        className="material-symbols-outlined"
-                        style={{
-                            fontSize: theme.textStyle.section.fontSize,
-                            fontWeight: 600
-                        }}
-                        aria-hidden="true"
-                    >
-                        add
-                    </span>
-                    <Text font={theme.textStyle.caption} as="span">
-                        Add Your Event
-                    </Text>
-                </a>
-            </li>
-        </ul>
+                <li>
+                    <a href="#">
+                        <span 
+                            className="material-symbols-outlined"
+                            style={{
+                                fontSize: theme.textStyle.section.fontSize,
+                                fontWeight: 600
+                            }}
+                            aria-hidden="true"
+                        >
+                            add
+                        </span>
+                        <Text font={theme.textStyle.caption} as="span">
+                            Add Your Event
+                        </Text>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     )
 }
 
@@ -199,7 +201,7 @@ const Calendar: React.FC = () => {
     return (
         <ul id="denver-events-calendar">
             <li>
-                <a href="#">
+                <a href="#" aria-label="open calendar">
                     <span 
                         className="material-symbols-outlined"
                         style={{
@@ -223,7 +225,7 @@ const Calendar: React.FC = () => {
                                     <Text as="span" font={theme.textStyle.callout}>
                                         { day.getNumber() }
                                     </Text>
-                                    <Text as="span" font={theme.textStyle.callout}>
+                                    <Text as="abbr" font={theme.textStyle.callout}>
                                         { day.getDayOfWeek() }
                                     </Text>
                                 </a>

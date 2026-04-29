@@ -118,17 +118,17 @@ const Header: React.FC = () => {
                 </li>
               )}
               <li>
-                <span 
+                <button 
                   style={{padding: "0px 12px",}}
-                  className="material-symbols-outlined tappable-icon-btn"
+                  className="unstyled-button tappable-icon-btn"
                   aria-label="Search"
                   role="button"
                   aria-haspopup="true"
                   aria-expanded={false}
                   tabIndex={0}
                 >
-                  search
-                </span>
+                  <span className="material-symbols-outlined">search</span>
+                </button>
               </li>
             </ul>
           </nav>
