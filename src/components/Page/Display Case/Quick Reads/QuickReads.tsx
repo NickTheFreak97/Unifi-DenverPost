@@ -1,5 +1,4 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
 import Text from "@/components/Common/Text";
 import { useTheme } from "@/components/theme/theme";
 import './quickreads.css'
