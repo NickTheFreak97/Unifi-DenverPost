@@ -48,7 +48,7 @@ const Photos: React.FC = () => {
                             return (
                                 <li key={headline}>
                                     <article>
-                                        <div className="photos-img-wrapper" style={{width: "90px"}}>
+                                        <div className="photos-img-wrapper">
                                             <img src={FeaturedPlaceholder} alt="headline alt" width="90px" height="auto" />
                                         </div>
                                         <h4>
@@ -65,7 +65,7 @@ const Photos: React.FC = () => {
                 <div id="more-photos-indicator" inert aria-hidden="true" tabIndex={-1}/>
 
 
-                <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}} id="show-more-photos">
+                <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="text-uppercased" id="show-more-photos">
                     Show More Photos
                 </Text>
             </div>
@@ -83,8 +83,8 @@ const FeaturedPhoto: React.FC = () => {
                 <img src={FeaturedPlaceholder} alt="An alt placeholder for the featured story of Photo section" width="100%" height="auto" />
             </div>
 
-            <h3 style={{marginBottom: "16px"}}>
-                <Text as="a" href="#" font={theme.textStyle.title} className="brand-link" style={{lineHeight: 1.2}}>
+            <h3 className="mb-related">
+                <Text as="a" href="#" font={theme.textStyle.title} className="brand-link">
                     { `PHOTOS: ${lorem.generateSentences(1)}` }
                 </Text>
             </h3>

@@ -1,4 +1,5 @@
 import React from "react"
+import Text from "@/components/Common/Text"
 import { useTheme } from "../../theme/theme"
 
 import './trending.css'
@@ -11,11 +12,11 @@ const Trending: React.FC = () => {
             <ul id="trending-list" aria-label="trending news">
                 <li 
                     role="heading"
-                    aria-level={2}
-                    style={{
-                    fontFamily: theme.textStyle.body.fontFamily,
-                    fontSize: theme.textStyle.body.fontSize
-                }}>Trending:</li>
+                    aria-level={2}>
+                    <Text as="span" font={theme.textStyle.body} className="fw-600">
+                        Trending:
+                    </Text>
+                </li>
                 <NavigationLink destination="JBS labor deal"/>
                 <NavigationLink destination="Paxton Lynch’s comeback derailed by injury 🏈"/>
                 <NavigationLink destination="Colorado’s budget problem"/>
@@ -32,11 +33,11 @@ const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
     const theme = useTheme();
 
     return (
-        <li style={{
-            fontFamily: theme.textStyle.body.fontFamily,
-            fontSize: theme.textStyle.body.fontSize,
-            fontWeight: 300
-        }}><a href="#" className="brand-link">{props.destination}</a></li>
+        <li>
+            <Text as="a" href="#" className="brand-link" font={theme.textStyle.body}>
+                {props.destination}
+            </Text>
+        </li>
     )
 }
 

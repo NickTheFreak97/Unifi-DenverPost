@@ -77,3 +77,8 @@
 .featured-headlines-list li a {
     cursor: pointer;
 }
+
+.featured-headlines-elapsed-time {
+    margin-left: 5px;
+    font-weight: 400;
+}

@@ -1,7 +1,7 @@
 :root {
   --page-wrapper-width: 95%;
   --brand-color: #7d161e; 
-  --separator-color: #bfbfbf;
+  --separator-color: #949494;
 }
 
 #root {
@@ -9,6 +9,10 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+* {
+  font-family: 'Noto Sans';
 }
 
 header {
@@ -19,7 +23,7 @@ header {
 
 hr {
   border: none;
-  border-top: 0.3px solid var(--separator-color);
+  border-top: 1px solid var(--separator-color);
 }
 
 #quick-reads-list {
@@ -64,3 +68,91 @@ a.brand-link:hover {
 h2 a, h3 a {
   line-height: 1.2;
 }
+
+
+.header-action {
+    background-color: var(--brand-color);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 45px;
+    border-radius: 5px;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.header-action:hover {
+    background-color: #c81632;
+    text-decoration: underline;
+}
+
+
+
+/* Font related */
+.text-uppercased {
+  text-transform: uppercase;
+}
+
+#root .mui-icon {
+  font-family: 'Material Symbols Outlined';
+}
+
+#root .fw-300 {
+  font-weight: 300;
+}
+
+#root .fw-400 {
+  font-weight: 400
+}
+
+#root .fw-600 {
+  font-weight: 600;
+}
+
+#root .fw-700 {
+  font-weight: 700;
+}
+
+#root .fw-800 {
+  font-weight: 800;
+}
+
+#root .fs-xl {
+  font-size: 29px;
+}
+
+#root .txt-passthrough {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+/* Spacing related */
+#root .mt-related {
+  margin-top: 16px;
+}
+
+#root .mb-related {
+  margin-bottom: 16px;
+}
+
+#root .pb-regular {
+  padding-bottom: 16px;
+}
+
+#root .lh-default {
+  line-height: 1.2;
+}
+
+#root .lh-sm {
+  line-height: 1.1;
+}
+
+
+/* Spacing related */
+#root .fill-max-width {
+  width: 100%;
+}
+

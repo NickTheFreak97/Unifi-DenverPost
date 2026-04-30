@@ -12,12 +12,8 @@ const MaterialIcon: React.FC<MaterialIconProps> = (props) => {
 
     return (
         <span 
-            className="material-symbols-outlined"
-            style={{
-                ...props.style,
-                fontSize: theme.textStyle.title.fontSize,
-                fontWeight: theme.textStyle.body.fontWeight
-            }}
+            className={`material-symbols-outlined fw-${theme.textStyle.body.fontWeight} fs-xl`}
+            style={{...props.style}}
             aria-hidden="true"
         >
             { iconName }

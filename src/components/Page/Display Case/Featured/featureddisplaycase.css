@@ -42,6 +42,13 @@
     cursor: pointer;
 }
 
+.featured-prominent-news-wrapper .featured-prominent-news-headline-wrapper h2 {
+    font-family: 'Noto Sans';
+    font-size: 29px;
+    font-weight: 700;
+    line-height: 1;
+}
+
 @media screen and (max-width: 800px) {
     .featured-display-wrapper {
         flex-direction: column;

@@ -49,7 +49,7 @@ const ProminentNews: React.FC = () => {
     return (
         <article className="featured-prominent-news-wrapper">
             <div className="featured-prominent-news-headline-wrapper">
-                <Text as="h2" font={theme.textStyle.title} style={{ lineHeight: 1 }}>
+                <Text as="h2">
                     <a href="#" className="brand-link">{lorem.generateSentences(1)}</a>
                 </Text>
 
@@ -58,7 +58,7 @@ const ProminentNews: React.FC = () => {
                         articleImage
                 }
 
-                <Text as="p" font={theme.textStyle.body} style={{ fontWeight: 300 }}>
+                <Text as="p" font={theme.textStyle.body} className="fw-300">
                     {lorem.generateSentences(1)}
                 </Text>
             </div>
@@ -75,11 +75,7 @@ const ProminentNews: React.FC = () => {
 const Divider: React.FC = () => {
     return <hr 
         aria-hidden="true" 
-        style={{
-            border: "none",
-            borderTop: "0.3px solid var(--separator-color)",
-            marginTop: "16px"
-        }}
+        className="mt-related"
     />
 }
 

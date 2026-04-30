@@ -46,7 +46,7 @@ const Events: React.FC = () => {
 
     return <section id="denver-events-container" aria-labelledby="denver-event-title">
         <div id="denver-events-header">
-            <Text as="h2" id="denver-event-title" font={theme.textStyle.prominent} style={{fontWeight: 400}}>
+            <Text as="h2" id="denver-event-title" font={theme.textStyle.prominent} className="fw-400">
                 Denver Events
             </Text>
 
@@ -57,10 +57,7 @@ const Events: React.FC = () => {
             <li>
                 <a href="#">
                     <span 
-                        className="material-symbols-outlined"
-                        style={{
-                            fontSize: theme.textStyle.section.fontSize
-                        }}
+                        className={`material-symbols-outlined fw-${theme.textStyle.section.fontSize}`}
                         aria-label="go back"
                     >
                         chevron_backward
@@ -81,8 +78,7 @@ const Events: React.FC = () => {
             <li>
                 <a href="#">
                     <span 
-                        className="material-symbols-outlined"
-                        style={{fontSize: theme.textStyle.section.fontSize}}
+                        className={`material-symbols-outlined fw-${theme.textStyle.section.fontSize}`}
                         aria-label="go forward"
                     >
                         chevron_forward
@@ -105,16 +101,9 @@ const HeaderLinks: React.FC = () => {
             <ul id="denver-events-header-links">
                 <li>
                     <a href="#">
-                        <span 
-                            className="material-symbols-outlined"
-                            style={{
-                                fontSize: theme.textStyle.caption.fontSize,
-                                fontWeight: theme.textStyle.caption.fontWeight
-                            }}
-                            aria-hidden="true"
-                        >
+                        <Text as="span" className="material-symbols-outlined mui-icon" font={theme.textStyle.caption} aria-hidden="true">
                             calendar_month
-                        </span>
+                        </Text>
                         <Text font={theme.textStyle.caption} as="span">
                             See All Events
                         </Text>
@@ -123,16 +112,9 @@ const HeaderLinks: React.FC = () => {
 
                 <li>
                     <a href="#">
-                        <span 
-                            className="material-symbols-outlined"
-                            style={{
-                                fontSize: theme.textStyle.section.fontSize,
-                                fontWeight: 600
-                            }}
-                            aria-hidden="true"
-                        >
+                        <Text as="span" className="material-symbols-outlined mui-icon" font={theme.textStyle.section} aria-hidden="true">
                             add
-                        </span>
+                        </Text>
                         <Text font={theme.textStyle.caption} as="span">
                             Add Your Event
                         </Text>
@@ -204,11 +186,6 @@ const Calendar: React.FC = () => {
                 <a href="#" aria-label="open calendar">
                     <span 
                         className="material-symbols-outlined"
-                        style={{
-                            fontSize: "40px",
-                            fontWeight: 300,
-                            color: "#3b3b3b"
-                        }}
                         aria-hidden="true"
                     >
                         calendar_month

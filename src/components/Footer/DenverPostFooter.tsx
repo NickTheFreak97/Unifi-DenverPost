@@ -37,7 +37,7 @@ const DenverPostFooter: React.FC = () => {
                         <ul>
                             <li aria-label="Subscribe to newsletter">
                                 <HeaderAction>
-                                    <Text font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}}>
+                                    <Text font={theme.textStyle.secondaryHeadline} className="text-uppercased" aria-hidden={true}>
                                         Subscribe now
                                     </Text>
                                 </HeaderAction>
@@ -67,7 +67,7 @@ const FooterColumn: React.FC<FooterColumnProps> = (props) => {
                 Array.from({length: props.linksCount}).map((_, index) => {
                     return <li key={index}>
                         <a href="#">
-                            <Text as="span" font={theme.textStyle.body} style={{fontWeight: index == 0 ? 700 : 400 }}>
+                            <Text as="span" font={index == 0 ? theme.textStyle.header : theme.textStyle.body}>
                                 { lorem.generateSentences(1) }
                             </Text>
                         </a>

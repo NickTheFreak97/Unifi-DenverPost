@@ -71,16 +71,9 @@ const Header: React.FC = () => {
             tabIndex={0}
             aria-label="Open all sections"
           >
-            <span 
-                className="material-symbols-outlined"
-                style={{
-                  fontSize: theme.textStyle.secondaryHeadline.fontSize,
-                  fontWeight: theme.textStyle.secondaryHeadline.fontWeight
-                }}
-                aria-hidden="true"
-              >
-              dehaze
-            </span>
+            <Text as="span" className="material-symbols-outlined mui-icon" font={theme.textStyle.secondaryHeadline} aria-hidden="true">
+                dehaze
+            </Text>
 
             <Text
               font={theme.textStyle.secondaryHeadline}
@@ -120,7 +113,6 @@ const Header: React.FC = () => {
               )}
               <li>
                 <button 
-                  style={{padding: "0px 12px",}}
                   className="unstyled-button tappable-icon-btn"
                   aria-label="Search"
                   aria-haspopup="true"

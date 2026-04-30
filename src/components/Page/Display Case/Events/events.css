@@ -117,8 +117,6 @@
 }
 
 
-
-
 #denver-events-calendar {
     list-style-type: none;
     display: flex;
@@ -138,6 +136,12 @@
     flex-direction: column;
     gap: 0;
     align-items: center;
+}
+
+#denver-events-calendar li a span.material-symbols-outlined {
+    font-size: 40px;
+    font-weight: 300;
+    color: #3b3b3b;
 }
 
 

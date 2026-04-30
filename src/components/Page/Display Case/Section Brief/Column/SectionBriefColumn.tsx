@@ -37,7 +37,7 @@ const SectionBriefColumn: React.FC = () => {
     const briefTitle = lorem.generateWords(Math.floor(Math.random() * 2) + 1)
 
     return (
-        <section style={{width: "100%"}} aria-label={`${briefTitle} brief`}>
+        <section className="fill-max-width" aria-label={`${briefTitle} brief`}>
             <Text as="h2" font={theme.textStyle.section} className="brief-column-title">
                 <a href="#" className="brand-link">{ briefTitle }</a>
             </Text>
@@ -95,13 +95,13 @@ const SectionTopStory: React.FC = () => {
             </div>
 
             <h3>
-                <Text as="a" href="#" className="brand-link" font={theme.textStyle.title} style={{lineHeight: "1.15"}}>
+                <Text as="a" href="#" className="brand-link lh-regular" font={theme.textStyle.title}>
                     { lorem.generateSentences(1) }
                 </Text>
             </h3>
 
 
-            <Text as="p" font={theme.textStyle.body} style={{fontWeight: 300}}>
+            <Text as="p" font={theme.textStyle.body} className="fw-300">
                 { lorem.generateSentences(1) }
             </Text>
         </article>

@@ -136,19 +136,19 @@ const FeaturedHeadlinesFeed: React.FC = () => {
                                         { headline.getTitle() }
                                     </Text>
                                 </h4>
-                                <ElapsedTime time={headline.getTime()} amount={headline.getAmountOfTime()}/>
 
+                                <ElapsedTime time={headline.getTime()} amount={headline.getAmountOfTime()}/>
                             </article>
                         }
                     </li>
                 })
             }
             <li aria-label="sign up to newsletter action">
-                <Text as="span" font={theme.textStyle.subtitle} style={{fontWeight: 700}}>
+                <Text as="span" font={theme.textStyle.subtitle} className="fw-700">
                     Sign up for Newsletters and Alerts
                 </Text>
                 <HeaderAction ariaLabel="Sign up to youd denver post account">
-                    <Text font={theme.textStyle.secondaryHeadline} style={{textTransform: 'uppercase'}} aria-hidden="true">
+                    <Text font={theme.textStyle.secondaryHeadline} className="text-uppercased" aria-hidden="true">
                       Sign Up
                     </Text>
                 </HeaderAction>
@@ -172,11 +172,7 @@ const ElapsedTime: React.FC<ElapsedTimeProps> = (props) => {
         <Text 
              as='span' 
              font={theme.textStyle.caption} 
-             style={{
-                marginLeft: "5px",
-                fontWeight: 300,
-            }}
-             >
+             className="featured-headlines-elapsed-time">
             { props.amount.toString() + " " + textForTime + (props.amount > 1 ? "s" : "") }
         </Text>
     )

@@ -1,4 +1,5 @@
 import React from 'react'
+import Text from '@/components/Common/Text'
 import { useTheme } from '../../theme/theme'
 
 
@@ -30,11 +31,11 @@ const NavigationLink: React.FC<NavigationLinkProps> = (props) => {
     const theme = useTheme();
 
     return (
-        <li style={{
-            fontFamily: theme.textStyle.subtitle.fontFamily,
-            fontSize: theme.textStyle.subtitle.fontSize,
-            fontWeight: theme.textStyle.subtitle.fontWeight
-        }}><a href="#">{props.destination}</a></li>
+        <li>
+            <Text as="span" font={theme.textStyle.subtitle}>
+                <a href="#">{props.destination}</a>
+            </Text>
+        </li>
     )
 }
 

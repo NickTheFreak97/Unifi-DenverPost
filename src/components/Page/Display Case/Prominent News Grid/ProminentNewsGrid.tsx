@@ -33,10 +33,10 @@ const ProminentNewsCell: React.FC = () => {
     const theme = useTheme();
 
     return (
-        <article style={{paddingBottom: "16px"}}>
+        <article className="pb-regular">
             <img src={NewsPlaceholder} alt="featured news (0,0)"/>
             <h3>
-                <Text as="a" font={theme.textStyle.prominent} style={{ lineHeight: 1.1 }} href="#" className="brand-link">
+                <Text as="a" font={theme.textStyle.prominent} href="#" className="brand-link lh-sm">
                     {lorem.generateSentences(1)}
                 </Text>
             </h3>

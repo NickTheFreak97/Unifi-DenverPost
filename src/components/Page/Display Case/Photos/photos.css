@@ -64,6 +64,10 @@ I wish I knew <img>::after is replaced with a void element!!!!
     cursor: pointer;
 }
 
+li .photos-img-wrapper {
+    width: 90px;
+}
+
 #photos-wrapper article .photos-img-wrapper::after {
     content: '\e3f4';
     font-family: 'Material Symbols Outlined' !important;

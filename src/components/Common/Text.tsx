@@ -1,10 +1,18 @@
 import React, { type JSX } from 'react';
+import { styled } from 'styled-components';
 import type { TextStyle } from '../theme/theme';
 
 export type TextProps<T extends keyof JSX.IntrinsicElements = "span"> = {
     font?: Partial<TextStyle>;
     as?: T;
 } & React.ComponentPropsWithoutRef<T>;
+
+
+const StyledText = styled.span<{ $font?: Partial<TextStyle> }>`
+    font-size: ${({ $font }) => $font?.fontSize};
+    font-weight: ${({ $font }) => $font?.fontWeight};
+    font-family: ${({ $font }) => $font?.fontFamily};
+`;
 
 
 const Text = <T extends keyof JSX.IntrinsicElements = "span">({
@@ -14,19 +22,10 @@ const Text = <T extends keyof JSX.IntrinsicElements = "span">({
     children,
     ...rest
 }: TextProps<T>) => {
-    const Component = (as ?? "span") as React.ElementType;
     return (
-        <Component
-            style={{
-                fontSize: font?.fontSize,
-                fontWeight: font?.fontWeight,
-                fontFamily: font?.fontFamily,
-                ...style,
-            }}
-            {...rest}
-        >
-            { children }
-        </Component>
+        <StyledText as={as} $font={font} {...(rest as any)}>
+            {children}
+        </StyledText>
     );
 };
 
