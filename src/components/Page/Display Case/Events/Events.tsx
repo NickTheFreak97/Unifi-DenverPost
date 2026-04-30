@@ -143,12 +143,12 @@ const EventCard: React.FC = () => {
 
 class Day {
     number: number
-    dayOfWeek: string
     timestamp: string
+    date: Date
 
     constructor(date: Date) {
+        this.date = date
         this.number = date.getDate()
-        this.dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'short' })
         
         this.timestamp = [
             date.getFullYear(),
@@ -162,12 +162,17 @@ class Day {
     }
 
     getDayOfWeek(): string {
-        return this.dayOfWeek.toUpperCase();
+        return this.date.toLocaleDateString('en-US', { weekday: 'short' })
+    }
+
+    getLongDayOfWeek(): string {
+        return this.date.toLocaleDateString('en-US', { weekday: 'long' })
     }
 
     getTimestamp(): string {
         return this.timestamp
     }
+    
 }
 
 const Calendar: React.FC = () => {
@@ -202,7 +207,7 @@ const Calendar: React.FC = () => {
                                     <Text as="span" font={theme.textStyle.callout}>
                                         { day.getNumber() }
                                     </Text>
-                                    <Text as="abbr" font={theme.textStyle.callout}>
+                                    <Text as="abbr" font={theme.textStyle.callout} title={day.getLongDayOfWeek()}>
                                         { day.getDayOfWeek() }
                                     </Text>
                                 </a>

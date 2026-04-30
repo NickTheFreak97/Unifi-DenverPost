@@ -124,18 +124,18 @@ const FeaturedHeadlinesFeed: React.FC = () => {
     const theme = useTheme();
 
     return (
-        <ul className="featured-headlines-list unstyled-list separated-list" aria-label="Featured headlines">
-            <li><h3>Latest Headlines</h3></li>
+        <ul className="featured-headlines-list unstyled-list separated-list" aria-labelledby="featured-headlines-title">
+            <li><h2 id="featured-headlines-title">Latest Headlines</h2></li>
             {
                 randomHeadlines.map( headline => {
                     return <li key={headline.getTitle()}>
                         {
                             <article>
-                                <h4>
+                                <h3>
                                     <Text as="a" font={theme.textStyle.secondaryHeadline} href="#" className="brand-link">
                                         { headline.getTitle() }
                                     </Text>
-                                </h4>
+                                </h3>
 
                                 <ElapsedTime time={headline.getTime()} amount={headline.getAmountOfTime()}/>
                             </article>

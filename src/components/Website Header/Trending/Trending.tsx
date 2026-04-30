@@ -9,11 +9,9 @@ const Trending: React.FC = () => {
 
     return (
         <React.Fragment>
-            <ul id="trending-list" aria-label="trending news">
-                <li 
-                    role="heading"
-                    aria-level={2}>
-                    <Text as="span" font={theme.textStyle.body} className="fw-600">
+            <ul id="trending-list" aria-labelledby="trending-nav-label">
+                <li >
+                    <Text as="h2" font={theme.textStyle.body} className="fw-600" id="trending-nav-label">
                         Trending:
                     </Text>
                 </li>

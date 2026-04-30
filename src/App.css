@@ -2,7 +2,7 @@
   --page-wrapper-width: 95%;
   --brand-color: #7d161e; 
   --muted-color: #3B3B3B; 
-  --separator-color: #949494;
+  --separator-color: #767676;
 
   --gap-regular: 16px;
   --gap-large: 32px;
@@ -31,7 +31,6 @@ hr {
 }
 
 #quick-reads-list {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
   max-width: 100%;
@@ -39,7 +38,6 @@ hr {
   justify-content: flex-start;
   align-items: flex-start;
   gap: var(--gap-large);
-  margin-top: 100px;
 }
 
 #quick-reads-list > li {
@@ -66,6 +64,11 @@ a.brand-link:hover {
     font-weight: unset;
     font-family: unset;
     line-height: unset;
+  }
+
+  p, h1, h2, h3, h4, h5, h6, li {
+    max-width: 80ch;
+    line-height: 1.5;
   }
 }
 

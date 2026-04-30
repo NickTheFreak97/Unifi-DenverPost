@@ -2,7 +2,6 @@ footer {
     background-color: #F5F5F5;
     max-width: 100%;
     width: 100%;
-    margin-top: 100px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 8px 0px inset;
     border-top: 1px solid rgba(0,0,0,0.3);
     padding-bottom: 100px;
@@ -38,7 +37,7 @@ footer {
 #footer-shield nav ul {
     flex: 1;
     position: relative;
-    margin-top: 32px;
+    margin-top: var(--gap-large);
     padding-left: 64px;
     display: flex;
     flex-direction: column;

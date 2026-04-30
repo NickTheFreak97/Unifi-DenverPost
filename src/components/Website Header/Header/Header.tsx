@@ -83,10 +83,13 @@ const Header: React.FC = () => {
             </Text>
           </button>
           
+          {
+            // alt="" and aria-hidden="true" to prevent Voiceover from reading The Denver Post twice (see h1).
+          }
           { screenWidth < Breakpoint.laptop && 
             <img src={logo} 
-                alt="The Denver Post"
-                aria-label="The Denver Post"/>
+                alt=""
+                aria-hidden="true"/>
           }
           
           <nav aria-label="actions">
