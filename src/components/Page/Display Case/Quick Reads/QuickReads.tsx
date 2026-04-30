@@ -6,33 +6,30 @@ import './quickreads.css'
 import '../Section Brief/briefs.css'
 
 import Placeholder from '@/assets/Placeholders/391x260.svg'
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 20,
-    min: 15
-  }
-});
+const loremConfig = {
+    minWords: 15,
+    maxWords: 20
+}
 
 
 const QuickReads: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     const quickReads = (() => {
         let quickReads = []
 
         for(var i = 0; i < 4; i++) {
-            quickReads.push(lorem.generateSentences(1))
+            quickReads.push(lorem(loremConfig))
         }
 
         return quickReads
     })()
 
-    const quickReadsTitle = lorem.generateWords(Math.floor(Math.random() % 2 + 1))
+    const randomLength = Math.floor(Math.random() % 2 + 1);
+    const quickReadsTitle = lorem({ minWords: randomLength, maxWords: randomLength })
 
     return (
         <section className="quick-reads-container" aria-label={`${quickReadsTitle} quick reads`}>
@@ -67,6 +64,7 @@ const QuickReads: React.FC = () => {
 
 const FeaturedQuickRead: React.FC = () => {
     const theme = useTheme()
+    const lorem = useLoremIpsum()
 
     return (
         <article className="quick-reads-featured-article">
@@ -74,13 +72,13 @@ const FeaturedQuickRead: React.FC = () => {
             <div className="quick-reads-news-body-wrapper">
                 <h3>
                     <Text as="a" href="#" font={theme.textStyle.title} className="brand-link">
-                            { lorem.generateSentences(1) }
+                            { lorem(loremConfig) }
                     </Text>
                 </h3>
 
                 <div className="quick-reads-container">
                     <Text as="p" font={theme.textStyle.body}>
-                        { lorem.generateSentences(1) }
+                        { lorem(loremConfig) }
                     </Text>
                 </div>
             </div>

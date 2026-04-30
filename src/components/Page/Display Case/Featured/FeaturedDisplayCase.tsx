@@ -1,28 +1,15 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
 
 import Text from "../../../Common/Text"; 
 import { useTheme } from "../../../theme/theme";
 import { useScreenWidth } from "../../../../Context/Screen Size/UseScreenWidth";
-
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 import './featureddisplaycase.css'
 import MainPlaceholder from '../../../../assets/Placeholders/391x260.svg';
 import { Breakpoint } from "../../../../Context/Screen Size/Breakpoint";
 import FeaturedHeadlinesFeed from "../Headlines Feed/FeaturedHeadlinesFeed";
 import ProminentNewsGrid from "../Prominent News Grid/ProminentNewsGrid";
 import Advertisement from "../Advertisement/Advertisement";
-
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 9
-  }
-});
-
 
 const FeaturedDisplayCase: React.FC = () => {
     return (
@@ -43,6 +30,9 @@ const FeaturedDisplayCase: React.FC = () => {
 const ProminentNews: React.FC = () => {
     const theme = useTheme();
     const screenWidth = useScreenWidth();
+    const lorem = useLoremIpsum();
+
+
 
     const articleImage = <img src={MainPlaceholder} alt="placeholder image for the most prominent story" />
 
@@ -50,7 +40,7 @@ const ProminentNews: React.FC = () => {
         <article className="featured-prominent-news-wrapper">
             <div className="featured-prominent-news-headline-wrapper">
                 <Text as="h2">
-                    <a href="#" className="brand-link">{lorem.generateSentences(1)}</a>
+                    <a href="#" className="brand-link">{lorem()}</a>
                 </Text>
 
                 {
@@ -59,7 +49,7 @@ const ProminentNews: React.FC = () => {
                 }
 
                 <Text as="p" font={theme.textStyle.body} className="fw-300">
-                    {lorem.generateSentences(1)}
+                    {lorem()}
                 </Text>
             </div>
 

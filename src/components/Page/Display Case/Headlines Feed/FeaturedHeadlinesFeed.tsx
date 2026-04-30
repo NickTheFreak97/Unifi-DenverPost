@@ -1,5 +1,5 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 
 import Text from "../../../Common/Text";
 import { useTheme } from "../../../theme/theme";
@@ -60,20 +60,8 @@ function arrayFromRange(
 }
 
 
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 9
-  }
-});
-
-
-
 const FeaturedHeadlinesFeed: React.FC = () => {
+    const lorem = useLoremIpsum();
     const numberOfHeadlines: number = Math.floor(Math.random() * (7 - 4 + 1)) + 4
     const randomHeadlines: FeaturedHeadline[] = arrayFromRange(0, numberOfHeadlines-1).map( () => {
         let randomTime: number = Math.floor(Math.random() * 3) 
@@ -97,7 +85,7 @@ const FeaturedHeadlinesFeed: React.FC = () => {
         }
 
         return new FeaturedHeadline(
-            /*title:*/ lorem.generateSentences(1),
+            /*title:*/ lorem(),
             /*type*:*/ randomTime == 0 ? Time.minutes : randomTime == 1 ? Time.hours : Time.days,
             /*amount:*/ randomAmount,
         )

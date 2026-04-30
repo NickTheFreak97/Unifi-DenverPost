@@ -1,29 +1,20 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 
 import Text from "../../../Common/Text";
 import { useTheme } from "../../../theme/theme";
 import './recommended.css'
 
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 9
-  }
-});
-
 
 const RecommendedFYP: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
+
     const placeholders = (() => {
         let placeholders = [];
 
         for(var i = 0; i < 10; i++) {
-            placeholders.push(lorem.generateSentences(1));
+            placeholders.push(lorem());
         }
 
         return placeholders

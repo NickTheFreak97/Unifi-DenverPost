@@ -1,5 +1,5 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 import Text from "../../../Common/Text";
 import { useTheme } from "../../../theme/theme";
 import './photos.css'
@@ -7,20 +7,10 @@ import '../Section Brief/briefs.css'
 
 import FeaturedPlaceholder from '@/assets/Placeholders/589x392.svg'
 
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 9
-  }
-});
-
 
 const Photos: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     const headlines = ( ()=>{
         const numberOfHeadlines: number = Math.floor(Math.random() * (7 - 4 + 1)) + 4
@@ -28,7 +18,7 @@ const Photos: React.FC = () => {
         let theHeadlines = [];
 
         for(var i=0; i < numberOfHeadlines; i++) {
-            theHeadlines.push(lorem.generateSentences(1))
+            theHeadlines.push(lorem())
         }
 
         return theHeadlines
@@ -76,6 +66,7 @@ const Photos: React.FC = () => {
 
 const FeaturedPhoto: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     return (
         <article>
@@ -85,12 +76,12 @@ const FeaturedPhoto: React.FC = () => {
 
             <h3 className="mb-related">
                 <Text as="a" href="#" font={theme.textStyle.title} className="brand-link">
-                    { `PHOTOS: ${lorem.generateSentences(1)}` }
+                    { `PHOTOS: ${lorem()}` }
                 </Text>
             </h3>
 
             <Text as="p" font={theme.textStyle.body}>
-                { lorem.generateSentences(1) }
+                { lorem() }
             </Text>
         </article>
     )

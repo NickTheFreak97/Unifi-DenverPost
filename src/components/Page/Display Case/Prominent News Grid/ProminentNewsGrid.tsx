@@ -1,5 +1,5 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 
 import Text from "../../../Common/Text";
 import { useTheme } from "../../../theme/theme";
@@ -18,26 +18,16 @@ const ProminentNewsGrid: React.FC = () => {
     )
 }
 
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 16,
-    min: 9
-  }
-});
-
 const ProminentNewsCell: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     return (
         <article className="pb-regular">
             <img src={NewsPlaceholder} alt="featured news (0,0)"/>
             <h3>
                 <Text as="a" font={theme.textStyle.prominent} href="#" className="brand-link lh-sm">
-                    {lorem.generateSentences(1)}
+                    {lorem()}
                 </Text>
             </h3>
         </article>

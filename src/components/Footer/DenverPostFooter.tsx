@@ -1,17 +1,11 @@
 import React from "react";
 import Text from "../Common/Text";
-import { LoremIpsum } from "lorem-ipsum";
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 import { useTheme } from "../theme/theme";
 import DenverPostLogo from '@/assets/denver.post.logo.svg'
 import './denverpostfooter.css'
 import HeaderAction from "../Website Header/Header/HeaderAction";
 
-const lorem = new LoremIpsum({
-    wordsPerSentence: {
-        min: 2,
-        max: 4
-    }
-})
 
 const DenverPostFooter: React.FC = () => {
     const theme = useTheme();
@@ -60,6 +54,7 @@ interface FooterColumnProps {
 
 const FooterColumn: React.FC<FooterColumnProps> = (props) => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     return (
         <ul className="unstyled-list">
@@ -68,7 +63,7 @@ const FooterColumn: React.FC<FooterColumnProps> = (props) => {
                     return <li key={index}>
                         <a href="#">
                             <Text as="span" font={index == 0 ? theme.textStyle.header : theme.textStyle.body}>
-                                { lorem.generateSentences(1) }
+                                { lorem({ minWords: 2,  maxWords: 4}) }
                             </Text>
                         </a>
                     </li>
@@ -81,6 +76,7 @@ const FooterColumn: React.FC<FooterColumnProps> = (props) => {
 
 const TechnicalLinks: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     return (
         <nav aria-label="technical links">
@@ -90,7 +86,7 @@ const TechnicalLinks: React.FC = () => {
                         return <li key={index}>
                             <a href="#">
                                 <Text as="span" font={theme.textStyle.caption}>
-                                    { lorem.generateSentences(1) }
+                                    { lorem({ minWords: 2,  maxWords: 4}) }
                                 </Text>
                             </a>
                         </li>

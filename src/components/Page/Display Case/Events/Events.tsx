@@ -1,24 +1,12 @@
 import React from "react";
 import Text from "@/components/Common/Text";
-import { LoremIpsum } from "lorem-ipsum";
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 import { useTheme } from "@/components/theme/theme";
 import { useScreenWidth } from "@/Context/Screen Size/UseScreenWidth";
 import Placeholder from '@/assets/Placeholders/589x392.svg';
 
 import './events.css'
 import { Breakpoint } from "@/Context/Screen Size/Breakpoint";
-
-
-const lorem = new LoremIpsum({
-  sentencesPerParagraph: {
-    max: 8,
-    min: 4
-  },
-  wordsPerSentence: {
-    max: 5,
-    min: 2
-  }
-});
 
 const Events: React.FC = () => {
     const theme = useTheme()
@@ -125,9 +113,12 @@ const HeaderLinks: React.FC = () => {
     )
 }
 
+
+
 const EventCard: React.FC = () => {
     const theme = useTheme();
-    const title = lorem.generateSentences(1)
+    const lorem = useLoremIpsum();
+    const title = lorem();
 
      return <div className="denver-events-card" aria-label={title}>
         <img src={Placeholder} alt="placeholder for event" width="auto" height="auto" />
@@ -135,7 +126,7 @@ const EventCard: React.FC = () => {
             { title }
         </Text>
         <Text as="a" href="#" font={theme.textStyle.caption} className="line-limit-1">
-            { lorem.generateSentences(1) }
+            { lorem() }
         </Text>
     </div>
 }

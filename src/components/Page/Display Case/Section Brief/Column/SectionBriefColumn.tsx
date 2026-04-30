@@ -1,40 +1,33 @@
 import React from "react";
-import { LoremIpsum } from "lorem-ipsum";
 import Text from '@/components/Common/Text'
 import { useTheme } from '@/components/theme/theme'
-
+import { useLoremIpsum } from "@/Context/Placeholder/UseLoremIpsum";
 import './sectionbriefcolumn.css'
 import PlaceholderA from '@/assets/Placeholders/273x181.svg'
 import PlaceholderB from '@/assets/Placeholders/345x230.svg'
 import PlaceholderC from '@/assets/Placeholders/589x392.svg'
 
-const lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-        max: 8,
-        min: 4
-    },
-
-    wordsPerSentence: {
-        max: 30,
-        min: 15
-    }
-})
-
+const loremConfig = {
+    minWords: 15,
+    maxWords: 30
+}
 
 const SectionBriefColumn: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     const headlines = (() => {
         let headlines = [];
 
         for(var i = 0; i < 4; i++) {
-            headlines.push(lorem.generateSentences(1))
+            headlines.push(lorem(loremConfig))
         }
 
         return headlines
     })();
 
-    const briefTitle = lorem.generateWords(Math.floor(Math.random() * 2) + 1)
+    const titleLength = Math.floor(Math.random() * 2) + 1;
+    const briefTitle = lorem({ minWords: titleLength, maxWords: titleLength })
 
     return (
         <section className="fill-max-width" aria-label={`${briefTitle} brief`}>
@@ -69,6 +62,7 @@ const SectionBriefColumn: React.FC = () => {
 
 const SectionTopStory: React.FC = () => {
     const theme = useTheme();
+    const lorem = useLoremIpsum();
 
     const randomImage = (() => {
         let number = Math.floor(Math.random() * 3);
@@ -96,13 +90,13 @@ const SectionTopStory: React.FC = () => {
 
             <h3>
                 <Text as="a" href="#" className="brand-link lh-regular" font={theme.textStyle.title}>
-                    { lorem.generateSentences(1) }
+                    { lorem(loremConfig) }
                 </Text>
             </h3>
 
 
             <Text as="p" font={theme.textStyle.body} className="fw-300">
-                { lorem.generateSentences(1) }
+                { lorem(loremConfig) }
             </Text>
         </article>
     )
