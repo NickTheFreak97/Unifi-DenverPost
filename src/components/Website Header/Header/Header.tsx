@@ -14,13 +14,10 @@ import '../../../index.css'
 
 /**
  * @description: The header of the whole website with menu, and calls to actions. 
- * - Phablet (< 1040px): Calls to actions are replaced, 
+ * - Phablet (< 1024px): Calls to actions are replaced, 
  *    the logo of the website appears centered, 
  *    hamburger's label is hidden. An underline appears below the component.
  * - Mobile: (< 800px): Website logo gets bigger.
- * 
- * @todo:
- *  - Implement a level 1 heading for accessibility
  */
 const Header: React.FC = () => {
   const screenWidth = useScreenWidth();
@@ -86,14 +83,10 @@ const Header: React.FC = () => {
           {
             // alt="" and aria-hidden="true" to prevent Voiceover from reading The Denver Post twice (see h1).
           }
-          { screenWidth < Breakpoint.laptop && 
-            <img src={logo} 
-                alt=""
-                aria-hidden="true"/>
-          }
+          <img src={logo} alt="" aria-hidden="true"/>
           
           <nav aria-label="actions">
-            <ul className="unstyled-list">
+            <ul className={`unstyled-list${screenWidth <= Breakpoint.tablet ? " gap-0" : ''}`}>
               {
                 screenWidth >= Breakpoint.laptop && (
                   <li>
@@ -114,6 +107,19 @@ const Header: React.FC = () => {
                   </HeaderAction>
                 </li>
               )}
+              {
+                screenWidth <= Breakpoint.tablet &&
+                <li>
+                  <button className="unstyled-button user-icon-group" aria-label="Account settings">
+                      <Text as="span" className="material-symbols-outlined mui-icon fw-400" font={theme.textStyle.title} aria-hidden="true">
+                          person
+                      </Text>
+                      <Text as="span" className="material-symbols-outlined mui-icon fw-400" font={theme.textStyle.title} aria-hidden="true">
+                          chevron_forward
+                      </Text>
+                  </button>
+                </li> 
+              }
               <li>
                 <button 
                   className="unstyled-button tappable-icon-btn"

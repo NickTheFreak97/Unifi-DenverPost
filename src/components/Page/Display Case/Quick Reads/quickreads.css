@@ -96,9 +96,9 @@
     }
 
     .quick-reads-featured-article {
-        max-width: 69%;
+        max-width: 100%;
         width: 100%;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
     }
 
