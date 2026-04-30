@@ -1,7 +1,11 @@
 :root {
   --page-wrapper-width: 95%;
   --brand-color: #7d161e; 
+  --muted-color: #3B3B3B; 
   --separator-color: #949494;
+
+  --gap-regular: 16px;
+  --gap-large: 32px;
 }
 
 #root {
@@ -34,8 +38,7 @@ hr {
   width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 32px;
-  list-style-type: none;
+  gap: var(--gap-large);
   margin-top: 100px;
 }
 
@@ -57,11 +60,13 @@ a.brand-link:hover {
   color: var(--brand-color);
 }
 
-:is(h1, h2, h3, h4, h5, h6):has(> a:only-child) {
-  font-size: unset;
-  font-weight: unset;
-  font-family: unset;
-  line-height: unset;
+@layer components {
+  :is(h1, h2, h3, h4, h5, h6):has(> a:only-child) {
+    font-size: unset;
+    font-weight: unset;
+    font-family: unset;
+    line-height: unset;
+  }
 }
 
 
@@ -156,3 +161,31 @@ h2 a, h3 a {
   width: 100%;
 }
 
+
+/* Lists */
+.unstyled-list {
+  list-style-type: none;
+}
+
+.separated-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: var(--gap-large);
+}
+
+.separated-list li {
+  position: relative;
+}
+
+.separated-list li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--separator-color);
+    transform: translateY(calc(var(--gap-large) / 2));
+  }

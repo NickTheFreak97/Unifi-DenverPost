@@ -47,7 +47,7 @@ const App: React.FC = () => {
         <RecommendedFYP />
         <Briefs />
         <Photos />
-        <ul id="quick-reads-list" role="list">
+        <ul id="quick-reads-list" className="unstyled-list" role="list">
           {
             rangeOfQuickReads.map((sectionNumber) => {
               return (

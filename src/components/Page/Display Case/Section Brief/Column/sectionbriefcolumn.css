@@ -12,7 +12,6 @@
 }
 
 
-
 .brief-column-title a {
     text-transform: uppercase;
     position: relative;
@@ -50,7 +49,7 @@
     font-weight: 400;
     top: -3px;
     right: 0;
-    transform: translateX(16px);
+    transform: translateX(calc(var(--gap-large) / 2));
     position: absolute;
     height: 100%;
     display: flex;
@@ -61,34 +60,20 @@
 
 ul.brief-column {
     width: 100%;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 32px;
 }
 
 
 ul.brief-column li {
     width: 100%;
-    position: relative;
 }
 
 
-ul.brief-column li:not(:first-child):not(:last-child)::after {
-    width: 100%;
-    height: 1px;
-    background-color: var(--separator-color);
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    content: "";
-    transform: translateY(16px);
+ul.brief-column li:first-child::after {
+    display: none;
 }
 
 ul.brief-column li:first-child {
-    padding-bottom: 16px;
+    padding-bottom: var(--gap-regular);
 }
 
 

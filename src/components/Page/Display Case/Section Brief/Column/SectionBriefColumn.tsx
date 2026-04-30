@@ -41,7 +41,7 @@ const SectionBriefColumn: React.FC = () => {
             <Text as="h2" font={theme.textStyle.section} className="brief-column-title">
                 <a href="#" className="brand-link">{ briefTitle }</a>
             </Text>
-            <ul className="brief-column">
+            <ul className="brief-column unstyled-list separated-list">
                 <li>
                     <SectionTopStory />
                 </li>

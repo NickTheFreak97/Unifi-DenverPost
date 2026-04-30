@@ -1,7 +1,7 @@
 .briefs-container {
     display: flex; 
     flex-direction: row;
-    gap: 16px;
+    gap: var(--gap-regular);
     align-items: flex-start;
     margin-top: 100px;
     max-width: 80%;
@@ -14,8 +14,8 @@
     .briefs-container {
         display: grid; 
         grid-template-columns: 1fr 1fr;
-        row-gap: 32px;
-        column-gap: 16px;
+        row-gap: var(--gap-large);
+        column-gap: var(--gap-regular);
         max-width: 100%
     }
 }

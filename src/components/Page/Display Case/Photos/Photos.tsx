@@ -42,7 +42,7 @@ const Photos: React.FC = () => {
 
             <div id="photos-wrapper">
                 <FeaturedPhoto />
-                <ul>
+                <ul className="unstyled-list separated-list">
                     {
                         headlines.map( headline => {
                             return (

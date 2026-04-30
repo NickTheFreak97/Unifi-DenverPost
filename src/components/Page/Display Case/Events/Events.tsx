@@ -53,7 +53,7 @@ const Events: React.FC = () => {
             { <HeaderLinks /> }
         </div>
 
-        <ul id="denver-events-list">
+        <ul id="denver-events-list" className="unstyled-list">
             <li>
                 <a href="#">
                     <span 
@@ -98,7 +98,7 @@ const HeaderLinks: React.FC = () => {
 
     return (
         <nav>
-            <ul id="denver-events-header-links">
+            <ul id="denver-events-header-links" className="unstyled-list">
                 <li>
                     <a href="#">
                         <Text as="span" className="material-symbols-outlined mui-icon" font={theme.textStyle.caption} aria-hidden="true">
@@ -181,7 +181,7 @@ const Calendar: React.FC = () => {
 
 
     return (
-        <ul id="denver-events-calendar">
+        <ul id="denver-events-calendar" className="unstyled-list">
             <li>
                 <a href="#" aria-label="open calendar">
                     <span 

@@ -34,7 +34,7 @@ const DenverPostFooter: React.FC = () => {
 
                     <div className="footer-members-links">
                         <FooterColumn linksCount={4} />
-                        <ul>
+                        <ul className="unstyled-list">
                             <li aria-label="Subscribe to newsletter">
                                 <HeaderAction>
                                     <Text font={theme.textStyle.secondaryHeadline} className="text-uppercased" aria-hidden={true}>
@@ -62,7 +62,7 @@ const FooterColumn: React.FC<FooterColumnProps> = (props) => {
     const theme = useTheme();
 
     return (
-        <ul>
+        <ul className="unstyled-list">
             {
                 Array.from({length: props.linksCount}).map((_, index) => {
                     return <li key={index}>
@@ -84,7 +84,7 @@ const TechnicalLinks: React.FC = () => {
 
     return (
         <nav aria-label="technical links">
-            <ul id="technical-links">
+            <ul id="technical-links" className="unstyled-list">
                 {
                     Array.from({length: 10}).map((_, index) => {
                         return <li key={index}>

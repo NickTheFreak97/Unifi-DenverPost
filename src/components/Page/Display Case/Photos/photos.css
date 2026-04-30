@@ -100,30 +100,9 @@ li .photos-img-wrapper {
 
 
 #photos-wrapper ul {
-    list-style-type: none;
     max-width: 40%;
     width: 100%;
     padding-left: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 32px;
-}
-
-#photos-wrapper ul li {
-    position: relative;
-}
-
-#photos-wrapper ul li:not(:last-child)::after {
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    left: 0;
-    bottom: 0;
-    transform: translateY(16px);
-    content: "";
-    background-color: var(--separator-color);
 }
 
 #photos-wrapper ul li article {
@@ -131,7 +110,7 @@ li .photos-img-wrapper {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--gap-regular);
 }
 
 a#show-more-photos {
@@ -165,7 +144,7 @@ a#show-more-photos {
 @media screen and (max-width: 1024px) {
     #photos-wrapper {
         flex-direction: column;
-        gap: 16px;
+        gap: var(--gap-regular);
     }
 
 
@@ -176,8 +155,8 @@ a#show-more-photos {
     #photos-wrapper ul {
         max-width: 100%;
         display: grid;
-        column-gap: 16px;
-        row-gap: 32px;
+        column-gap: var(--gap-regular);
+        row-gap: var(--gap-large);
         padding-left: 0;
     }
 }

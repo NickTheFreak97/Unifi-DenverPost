@@ -90,7 +90,7 @@ const Header: React.FC = () => {
           }
           
           <nav aria-label="actions">
-            <ul>
+            <ul className="unstyled-list">
               {
                 screenWidth >= Breakpoint.laptop && (
                   <li>

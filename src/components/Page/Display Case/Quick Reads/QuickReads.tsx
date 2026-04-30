@@ -42,7 +42,7 @@ const QuickReads: React.FC = () => {
 
             <div className="quick-reads-list-container">
                 <FeaturedQuickRead />
-                <ul>
+                <ul className="unstyled-list separated-list">
                     {
                         quickReads.map(quickRead => {
                             return (

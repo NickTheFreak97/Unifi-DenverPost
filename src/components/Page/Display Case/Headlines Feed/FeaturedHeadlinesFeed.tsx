@@ -124,7 +124,7 @@ const FeaturedHeadlinesFeed: React.FC = () => {
     const theme = useTheme();
 
     return (
-        <ul className="featured-headlines-list" aria-label="Featured headlines">
+        <ul className="featured-headlines-list unstyled-list separated-list" aria-label="Featured headlines">
             <li><h3>Latest Headlines</h3></li>
             {
                 randomHeadlines.map( headline => {

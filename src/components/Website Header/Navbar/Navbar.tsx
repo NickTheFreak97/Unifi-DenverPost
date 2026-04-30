@@ -8,7 +8,7 @@ import './navbar.css'
 const Navbar = () => {
     return (
         <nav aria-label='Topics'>
-            <ul className='arguments-navbar' role="list">
+            <ul className='arguments-navbar unstyled-list' role="list">
                 <NavigationLink destination='News'/>
                 <NavigationLink destination='Sports'/>
                 <NavigationLink destination='Business'/>
