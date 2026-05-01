@@ -31,7 +31,7 @@ const SectionBriefColumn: React.FC = () => {
 
     return (
         <section className="fill-max-width" aria-label={`${briefTitle} brief`}>
-            <Text as="h2" font={theme.textStyle.section} className="brief-column-title">
+            <Text as="h2" font={theme.textStyle.section} className="brief-column-title no-max-width-ch-limit">
                 <a href="#" className="brand-link">{ briefTitle }</a>
             </Text>
             <ul className="brief-column unstyled-list separated-list">

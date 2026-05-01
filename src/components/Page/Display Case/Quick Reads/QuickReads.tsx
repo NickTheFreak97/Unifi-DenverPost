@@ -32,7 +32,7 @@ const QuickReads: React.FC = () => {
 
     return (
         <section className="quick-reads-container" aria-label={`${quickReadsTitle} quick reads`}>
-            <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
+            <Text as="h2" className="brief-column-title no-max-width-ch-limit" font={theme.textStyle.section}>
                 <a href="#" className="brand-link">{ quickReadsTitle }</a>
             </Text>
 

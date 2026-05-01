@@ -22,7 +22,7 @@ const RecommendedFYP: React.FC = () => {
 
     return (
         <section id="fyp" aria-label="Recommended for you">
-            <Text as="h2" font={theme.textStyle.section}>
+            <Text as="h2" font={theme.textStyle.section} className="no-max-width-ch-limit">
                 Recommended For You
             </Text>
             <ol aria-label="Recommended articles" className="unstyled-list">

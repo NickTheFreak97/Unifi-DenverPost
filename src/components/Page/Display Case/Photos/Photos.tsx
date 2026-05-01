@@ -26,7 +26,7 @@ const Photos: React.FC = () => {
 
     return (
         <section id="photos-container" aria-label="photos">
-            <Text as="h2" className="brief-column-title" font={theme.textStyle.section}>
+            <Text as="h2" className="brief-column-title no-max-width-ch-limit" font={theme.textStyle.section}>
                 <a href="#" className="brand-link">Photos</a>
             </Text>
 

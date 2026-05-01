@@ -66,7 +66,7 @@ a.brand-link:hover {
     line-height: unset;
   }
 
-  p, h1, h2, h3, h4, h5, h6, li {
+  :is(p, h1, h2, h3, h4, h5, h6, li):is(:not(.no-max-width-ch-limit)) {
     max-width: 80ch;
     line-height: 1.5;
   }
