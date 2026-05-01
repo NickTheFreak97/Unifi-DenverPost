@@ -52,37 +52,77 @@
     gap: 12px;
     position: relative;
     padding-right: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-height: 250px;
+}
+
+#denver-events-list::-webkit-scrollbar {
+    display: none;
 }
 
 #denver-events-list li {
-    flex: 1;
+    flex: 0 0 auto;
+    width: 150px;
+    scroll-snap-align: start;
 }
-
 
 #denver-events-list li:first-child, #denver-events-list li:last-child {
     flex-shrink: 1;
     flex-grow: 0;
     align-self: center;
+    width: auto;
 }
 
+#denver-events-list .denver-events-card.highlighted a {
+    background-color: var(--brand-color);
+    color: white;
+}
+
+.denver-events-image-wrapper {
+    position: relative;
+}
+
+.denver-events-image-wrapper img {
+    display: block;
+}
+
+.denver-events-image-wrapper time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: 'Noto Sans';
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    display: block;
+}
 
 #denver-events-list li:last-child {
-    position: absolute;
+    position: sticky;
+    right: -32px;
+    display: flex;
+    align-self: stretch;
+    align-items: center;
     width: 20px;
-    height: 100%;
-    display: inline-flex;
+    z-index: 1;
+}
+
+#denver-events-list li:last-child a {
+    display: flex;
     align-items: center;
     background-color: #eee;
-    right: 0;
-    top: 0;
-    bottom: 0;
+    height: 100%;
 }
 
 .denver-events-card {
     display: flex;
     flex-direction: column;
     gap: 0px;
-    flex: 1;
 }
 
 #denver-events-container a {
@@ -91,8 +131,10 @@
 }
 
 .denver-events-card img {
-    max-height: 100px;
-    aspect-ratio: calc(4/3);
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    object-position: 50% 50%;
 }
 
 .line-limit-1, .line-limit-2 {
@@ -144,7 +186,7 @@
 @media screen and (max-width: 1280px) {
     #denver-events-container {
         max-width: 69%;
-        overflow: clip;
+        overflow: hidden;
     }
 }
 

@@ -12,7 +12,7 @@ const Events: React.FC = () => {
     const theme = useTheme()
     const width = useScreenWidth()
 
-    const eventKeys = (() => {
+    const eventDays = (() => {
         var numberOfEvents: number = 6
 
         switch (width) {
@@ -23,13 +23,7 @@ const Events: React.FC = () => {
             default: break;
         }
 
-        var range = []
-
-        for(var i = 0; i < numberOfEvents; i++) {
-            range.push(i)
-        }
-
-        return range;
+        return Day.randomInPast(/*length:*/ numberOfEvents, /*maxDaysBack:*/ 15);
     })()
 
     return <section id="denver-events-container" aria-labelledby="denver-event-title">
@@ -54,10 +48,10 @@ const Events: React.FC = () => {
             </li>
 
             {
-                eventKeys.map( eventKey => {
+                eventDays.map( (date, i) => {
                     return (
-                        <li key={eventKey}>
-                            <EventCard/>
+                        <li key={i}>
+                            <EventCard date={date} className={i <= 1 ? "highlighted" : undefined}/>
                         </li>
                     )
                 })
@@ -113,25 +107,6 @@ const HeaderLinks: React.FC = () => {
     )
 }
 
-
-
-const EventCard: React.FC = () => {
-    const theme = useTheme();
-    const lorem = useLoremIpsum();
-    const title = lorem();
-
-     return <div className="denver-events-card" aria-label={title}>
-        <img src={Placeholder} alt="placeholder for event" width="auto" height="auto" />
-        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="line-limit-2">
-            { title }
-        </Text>
-        <Text as="a" href="#" font={theme.textStyle.caption} className="line-limit-1">
-            { lorem() }
-        </Text>
-    </div>
-}
-
-
 class Day {
     number: number
     timestamp: string
@@ -163,8 +138,57 @@ class Day {
     getTimestamp(): string {
         return this.timestamp
     }
-    
+
+    static randomInPast(length: number, maxDaysBack: number): Date[] {
+        var dates: number[] = []
+        var today = new Date().getDate();
+
+        for(var i = 0; i < length; i++) {
+            var daysBack = Math.floor(Math.random() * (maxDaysBack - 1) + 1)
+            dates.push(today - daysBack);
+        }
+
+        dates = dates.sort((lhs, rhs) => {
+            return lhs < rhs ? 1 : lhs == rhs ? 0 : -1
+        })
+
+        return dates.map(date => {
+            var matchingDate = new Date();
+            matchingDate.setDate(date);
+            return matchingDate;
+        })
+    }
 }
+
+
+interface EventCardProps {
+    className?: string
+    date: Date
+}
+
+const EventCard: React.FC<EventCardProps> = ({ className, date }) => {
+    const theme = useTheme();
+    const lorem = useLoremIpsum();
+    const title = lorem();
+
+     return <div className={`denver-events-card ${className ?? ''}`} aria-label={title}>
+        <div className="denver-events-image-wrapper">
+            <img src={Placeholder} alt="placeholder for event" width="auto" height="auto" />
+            <time dateTime={date.toISOString().split("T")[0]}>
+                {
+                    date.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric"})
+                }
+            </time>
+        </div>
+        <Text as="a" href="#" font={theme.textStyle.secondaryHeadline} className="line-limit-2">
+            { title }
+        </Text>
+        <Text as="a" href="#" font={theme.textStyle.caption} className="line-limit-1">
+            { lorem() }
+        </Text>
+    </div>
+}
+
 
 const Calendar: React.FC = () => {
     const theme = useTheme();

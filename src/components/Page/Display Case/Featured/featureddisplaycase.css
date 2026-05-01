@@ -49,6 +49,10 @@
     line-height: 1;
 }
 
+.featured-headlines-list h3 {
+    display: inline;
+}
+
 @media screen and (max-width: 800px) {
     .featured-display-wrapper {
         flex-direction: column;
